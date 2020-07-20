@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_v2/components/desktop_view_builder.dart';
 import 'package:portfolio_v2/components/mobile_desktop_view_builder.dart';
+import 'package:portfolio_v2/components/mobile_view_builder.dart';
 import 'package:portfolio_v2/skills/outline_skills_container.dart';
 
 class SkillsView extends StatelessWidget {
+  static const title = 'Skills';
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
@@ -23,7 +25,7 @@ class SkillsDesktopView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DesktopViewBuilder(
-      titleText: 'Skills',
+      titleText: SkillsView.title,
       children: [
         SizedBox(height: 20),
         for (var rowIndex = 0; rowIndex < skills.length / 4; rowIndex++) ...[
@@ -52,27 +54,18 @@ class SkillsMobileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        padding: const EdgeInsets.symmetric(horizontal: 50),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Divider(thickness: 3),
-            SizedBox(height: 50),
-            Text(
-              'Skills',
-              style: Theme.of(context).textTheme.headline2,
-            ),
-            SizedBox(height: 50),
-            for (var i = 0; i < skills.length; i++) ...[
-              OutlineSkillsContainer(
-                i: i,
-                isMobile: true,
-              ),
-              SizedBox(height: 10)
-            ]
-          ],
-        ));
+    return MobileViewBuilder(
+      titleText: SkillsView.title,
+      children: [
+        for (var i = 0; i < skills.length; i++) ...[
+          OutlineSkillsContainer(
+            i: i,
+            isMobile: true,
+          ),
+          SizedBox(height: 10)
+        ]
+      ],
+    );
   }
 }
 
