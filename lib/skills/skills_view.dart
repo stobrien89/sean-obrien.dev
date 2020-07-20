@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_v2/components/mobile_desktop_view_builder.dart';
 import 'package:portfolio_v2/constants.dart';
 import 'package:portfolio_v2/skills/outline_skills_container.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 
 class SkillsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ResponsiveBuilder(
-      builder: (_, size) {
-        if (size.screenSize.width < 812) return SkillsMobileView();
-        return SkillsDesktopView();
-      },
+    final width = MediaQuery.of(context).size.width;
+    return MobileDesktopViewBuilder(
+      desktopView: SkillsDesktopView(),
+      mobileView: SkillsMobileView(),
+      showMobile: width < 812,
     );
   }
 }

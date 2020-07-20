@@ -1,43 +1,64 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_builder/responsive_builder.dart';
+import 'package:portfolio_v2/components/mobile_desktop_view_builder.dart';
 
 class NavBarView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ResponsiveBuilder(
-      builder: (context, size) {
-        if (size.isMobile) {
-          return Container(
-              height: 60,
-              width: double.infinity,
-              child: Row(
-                children: [
-                  SizedBox(width: 20),
-                  FlutterLogo(),
-                  Spacer(),
-                  IconButton(
-                    icon: Icon(Icons.menu),
-                    onPressed: () => Scaffold.of(context).openEndDrawer(),
-                  )
-                ],
-              ));
-        }
-        final onPressed = () => print('click');
-        return Container(
-          height: 100,
-          width: 1507,
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Row(
-            children: [
-              FlutterLogo(),
-              Spacer(),
-              for (var item in kNavItemsList)
-                NavBarItem(onPressed: onPressed, text: item.text)
-            ],
-          ),
-        );
-      },
+    final onPressed = () => print('click');
+    return MobileDesktopViewBuilder(
+      mobileView: NavMobileView(),
+      desktopView: NavDesktopView(onPressed: onPressed),
     );
+  }
+}
+
+class NavDesktopView extends StatelessWidget {
+  const NavDesktopView({
+    Key key,
+    @required this.onPressed,
+  }) : super(key: key);
+
+  final void Function() onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 100,
+      width: 1507,
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Row(
+        children: [
+          FlutterLogo(),
+          Spacer(),
+          for (var item in kNavItemsList)
+            NavBarItem(onPressed: onPressed, text: item.text)
+        ],
+      ),
+    );
+  }
+}
+
+class NavMobileView extends StatelessWidget {
+  const NavMobileView({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        height: 60,
+        width: double.infinity,
+        child: Row(
+          children: [
+            SizedBox(width: 20),
+            FlutterLogo(),
+            Spacer(),
+            IconButton(
+              icon: Icon(Icons.menu),
+              onPressed: () => Scaffold.of(context).openEndDrawer(),
+            )
+          ],
+        ));
   }
 }
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_v2/components/mobile_desktop_view_builder.dart';
 import 'package:portfolio_v2/projects/project_item_body.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 
 import 'package:portfolio_v2/constants.dart';
 
@@ -38,11 +38,9 @@ final kProjectItems = [
 class ProjectsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ResponsiveBuilder(
-      builder: (_, size) {
-        if (size.isMobile) return ProjectsMobileView();
-        return ProjectsDesktopView();
-      },
+    return MobileDesktopViewBuilder(
+      mobileView: ProjectsMobileView(),
+      desktopView: ProjectsDesktopView(),
     );
   }
 }

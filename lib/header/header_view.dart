@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio_v2/components/mobile_desktop_view_builder.dart';
 import 'package:portfolio_v2/constants.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 
 class HeaderView extends StatelessWidget {
   const HeaderView({
@@ -10,26 +10,35 @@ class HeaderView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ResponsiveBuilder(
-      builder: (_, size) {
-        if (size.isMobile) return HeaderMobileView();
-        return Container(
-            height: 864,
-            width: kInitWidth,
-            color: Colors.red,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 50.0),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: HeaderBody(),
-                  ),
-                  FlutterLogo(size: 300)
-                ],
-              ),
-            ));
-      },
+    return MobileDesktopViewBuilder(
+      mobileView: HeaderMobileView(),
+      desktopView: HeaderDesktopView(),
     );
+  }
+}
+
+class HeaderDesktopView extends StatelessWidget {
+  const HeaderDesktopView({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        height: 864,
+        width: kInitWidth,
+        color: Colors.red,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 50.0),
+          child: Row(
+            children: [
+              Expanded(
+                child: HeaderBody(),
+              ),
+              FlutterLogo(size: 300)
+            ],
+          ),
+        ));
   }
 }
 
