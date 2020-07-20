@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_v2/components/desktop_view_builder.dart';
 import 'package:portfolio_v2/components/mobile_desktop_view_builder.dart';
-import 'package:portfolio_v2/constants.dart';
 import 'package:portfolio_v2/skills/outline_skills_container.dart';
 
 class SkillsView extends StatelessWidget {
@@ -22,35 +22,26 @@ class SkillsDesktopView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        padding: const EdgeInsets.symmetric(horizontal: 50),
-        width: kInitWidth,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Skills',
-              style: Theme.of(context).textTheme.headline2,
-            ),
-            SizedBox(height: 20),
-            for (var rowIndex = 0;
-                rowIndex < skills.length / 4;
-                rowIndex++) ...[
-              Row(
-                children: [
-                  for (var i = 0; i < skills.length / 3; i++)
-                    Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.only(left: i != 0 ? 8.0 : 0),
-                        child: OutlineSkillsContainer(i: i, rowIndex: rowIndex),
-                      ),
-                    ),
-                ],
-              ),
-              SizedBox(height: 10)
-            ]
-          ],
-        ));
+    return DesktopViewBuilder(
+      titleText: 'Skills',
+      children: [
+        SizedBox(height: 20),
+        for (var rowIndex = 0; rowIndex < skills.length / 4; rowIndex++) ...[
+          Row(
+            children: [
+              for (var i = 0; i < skills.length / 3; i++)
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.only(left: i != 0 ? 8.0 : 0),
+                    child: OutlineSkillsContainer(i: i, rowIndex: rowIndex),
+                  ),
+                ),
+            ],
+          ),
+          SizedBox(height: 10)
+        ]
+      ],
+    );
   }
 }
 
