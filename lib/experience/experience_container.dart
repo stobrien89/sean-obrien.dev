@@ -28,25 +28,25 @@ class ExperienceContainer extends StatelessWidget {
           children: [
             Text(
               experience.company,
-              style: _textStyle(isBold: true),
+              style: textStyle(isBold: true),
             ),
             SizedBox(height: 10),
             Text(
               experience.timeline,
-              style: _textStyle(isGray: true),
+              style: textStyle(isGray: true),
             ),
             SizedBox(height: 10),
             for (final item in experience.description)
               Text(
                 item,
-                style: _textStyle(),
+                style: textStyle(),
               )
           ],
         ));
   }
 }
 
-TextStyle _textStyle({bool isBold, bool isGray}) {
+TextStyle textStyle({bool isBold, bool isGray}) {
   return TextStyle(
       fontSize: 20,
       height: 1.3,
