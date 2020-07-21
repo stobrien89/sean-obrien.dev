@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_v2/components/mobile_desktop_view_builder.dart';
+import 'package:portfolio_v2/portfolio/portfolio_view.dart';
 import 'package:provider/provider.dart';
-import 'package:portfolio_v2/main.dart';
 
 class NavBarView extends StatelessWidget {
   @override
