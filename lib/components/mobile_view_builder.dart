@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class MobileViewBuilder extends StatelessWidget {
@@ -18,7 +19,8 @@ class MobileViewBuilder extends StatelessWidget {
         children: [
           Divider(thickness: 3),
           SizedBox(height: 40),
-          Text(titleText, style: Theme.of(context).textTheme.headline2),
+          AutoSizeText(titleText,
+              style: Theme.of(context).textTheme.headline2, maxLines: 1),
           SizedBox(height: 40),
           ...children,
         ],

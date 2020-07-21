@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_v2/components/mobile_desktop_view_builder.dart';
-import 'package:portfolio_v2/constants.dart';
+import 'package:portfolio_v2/utils/constants.dart';
 
 class HeaderView extends StatelessWidget {
   const HeaderView({
