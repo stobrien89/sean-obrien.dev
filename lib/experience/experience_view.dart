@@ -7,6 +7,10 @@ import 'package:portfolio_v2/components/mobile_view_builder.dart';
 import 'experience_container.dart';
 
 class ExperienceView extends StatelessWidget {
+  const ExperienceView({
+    Key key,
+  }) : super(key: key);
+
   static const title = 'Experience';
   @override
   Widget build(BuildContext context) {

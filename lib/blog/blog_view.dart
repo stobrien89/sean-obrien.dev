@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_v2/utils/hover_extensions.dart';
 import 'package:portfolio_v2/components/desktop_view_builder.dart';
 import 'package:portfolio_v2/components/mobile_desktop_view_builder.dart';
 import 'package:portfolio_v2/components/mobile_view_builder.dart';
 import 'package:portfolio_v2/experience/experience_container.dart';
 
 class BlogView extends StatelessWidget {
+  const BlogView({
+    Key key,
+  }) : super(key: key);
+
   static const title = 'Blog';
   @override
   Widget build(BuildContext context) {
@@ -37,7 +42,10 @@ class BlogDesktopView extends StatelessWidget {
 class BlogCard extends StatelessWidget {
   const BlogCard({
     Key key,
+    this.isMobile,
   }) : super(key: key);
+
+  final bool isMobile;
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +58,10 @@ class BlogCard extends StatelessWidget {
           Container(
             color: Colors.redAccent,
             width: double.infinity,
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 40),
+            padding: EdgeInsets.symmetric(
+              horizontal: 8,
+              vertical: isMobile ?? false ? 20 : 40,
+            ),
             child: Text(
               'Testing the Blog App',
               style: Theme.of(context)
@@ -71,7 +82,7 @@ class BlogCard extends StatelessWidget {
           )
         ],
       ),
-    );
+    ).moveUpOnHover;
   }
 }
 
@@ -80,7 +91,12 @@ class BlogMobileView extends StatelessWidget {
   Widget build(BuildContext context) {
     return MobileViewBuilder(
       titleText: BlogView.title,
-      children: [],
+      children: [
+        for (var i = 0; i < 2; i++)
+          BlogCard(
+            isMobile: true,
+          )
+      ],
     );
   }
 }

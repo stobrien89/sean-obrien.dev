@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_v2/components/mobile_desktop_view_builder.dart';
+import 'package:provider/provider.dart';
+import 'package:portfolio_v2/main.dart';
 
 class NavBarView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final onPressed = () => print('click');
     return MobileDesktopViewBuilder(
       mobileView: NavMobileView(),
-      desktopView: NavDesktopView(onPressed: onPressed),
+      desktopView: NavDesktopView(),
     );
   }
 }
@@ -15,13 +16,12 @@ class NavBarView extends StatelessWidget {
 class NavDesktopView extends StatelessWidget {
   const NavDesktopView({
     Key key,
-    @required this.onPressed,
   }) : super(key: key);
-
-  final void Function() onPressed;
 
   @override
   Widget build(BuildContext context) {
+    final navItemsList = context.watch<List<NavItem>>();
+    final scrollController = context.watch<ScrollController>();
     return Container(
       height: 100,
       width: 1507,
@@ -30,8 +30,17 @@ class NavDesktopView extends StatelessWidget {
         children: [
           FlutterLogo(),
           Spacer(),
-          for (var item in kNavItemsList)
-            NavBarItem(onPressed: onPressed, text: item.text)
+          for (var item in navItemsList)
+            NavBarItem(
+              onPressed: () {
+                scrollController.animateTo(
+                  item.position,
+                  duration: Duration(milliseconds: 800),
+                  curve: Curves.easeInOut,
+                );
+              },
+              text: item.text,
+            )
         ],
       ),
     );
@@ -61,19 +70,6 @@ class NavMobileView extends StatelessWidget {
         ));
   }
 }
-
-class NavItem {
-  final String text;
-
-  NavItem(this.text);
-}
-
-final kNavItemsList = [
-  NavItem('Projects'),
-  NavItem('Skills'),
-  NavItem('About'),
-  NavItem('Blog'),
-];
 
 class NavBarItem extends StatelessWidget {
   const NavBarItem({

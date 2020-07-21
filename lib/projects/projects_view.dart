@@ -36,7 +36,11 @@ final kProjectItems = [
 ];
 
 class ProjectsView extends StatelessWidget {
+  const ProjectsView({
+    Key key,
+  }) : super(key: key);
   static const title = 'Projects';
+
   @override
   Widget build(BuildContext context) {
     return MobileDesktopViewBuilder(
