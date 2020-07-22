@@ -57,6 +57,11 @@ class HeaderBody extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         AutoSizeText(
+          "Hello, my name is Sean O'Brien",
+          style: Theme.of(context).textTheme.headline2,
+          maxLines: 1,
+        ),
+        AutoSizeText(
           "I'm a Software",
           style: Theme.of(context).textTheme.headline2,
           maxLines: 1,

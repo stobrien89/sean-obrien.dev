@@ -33,6 +33,9 @@ class BlogDesktopView extends StatelessWidget {
                 child: BlogCard(),
               )
           ],
+        ),
+        SizedBox(
+          height: 100,
         )
       ],
     );

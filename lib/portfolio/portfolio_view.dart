@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_v2/blog/blog_view.dart';
 import 'package:portfolio_v2/drawer/drawer_view.dart';
 import 'package:portfolio_v2/experience/experience_view.dart';
+import 'package:portfolio_v2/footer/footer_view.dart';
 import 'package:portfolio_v2/header/header_view.dart';
 import 'package:portfolio_v2/nav_bar/nav_bar_view.dart';
 import 'package:portfolio_v2/portfolio/back_to_top_button.dart';
@@ -27,7 +28,7 @@ class _PortfolioViewState extends State<PortfolioView> with AfterLayoutMixin {
   List<NavItem> navItemsList = [];
 
   final ScrollController scrollController = ScrollController(
-    initialScrollOffset: 0,
+    initialScrollOffset: 2500,
   );
 
   @override
@@ -58,18 +59,21 @@ class _PortfolioViewState extends State<PortfolioView> with AfterLayoutMixin {
       ],
       child: Scaffold(
         endDrawer: DrawerView(),
-        body: SingleChildScrollView(
-          controller: scrollController,
-          child: Column(
-            children: [
-              NavBarView(),
-              HeaderView(),
-              ProjectsView(key: projectKey),
-              SkillsView(key: skillsKey),
-              ExperienceView(key: experienceKey),
-              BlogView(key: blogKey),
-              Container(height: height, width: width, color: Colors.black),
-            ],
+        body: SizedBox(
+          width: width,
+          child: SingleChildScrollView(
+            controller: scrollController,
+            child: Column(
+              children: [
+                NavBarView(),
+                HeaderView(),
+                ProjectsView(key: projectKey),
+                SkillsView(key: skillsKey),
+                ExperienceView(key: experienceKey),
+                BlogView(key: blogKey),
+                FooterView(),
+              ],
+            ),
           ),
         ),
         floatingActionButton: BackToTopButton(),
