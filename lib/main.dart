@@ -16,10 +16,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
         textTheme: TextTheme(
-          headline2: GoogleFonts.montserrat(
+          headline2: GoogleFonts.oswald(
             color: Colors.black,
           ),
-          headline4: GoogleFonts.montserrat(
+          headline4: GoogleFonts.oswald(
             fontSize: 30,
             color: Colors.black,
           ),

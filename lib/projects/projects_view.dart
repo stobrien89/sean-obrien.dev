@@ -19,17 +19,17 @@ class ProjectItem {
 
 final kProjectItems = [
   ProjectItem(
-      image: 'images/placeholder.jpg',
+      image: 'lib/assets/images/placeholder.jpg',
       title: 'Dig Those Diglett',
       description: 'A simple pokemon based game',
       technologies: ['HTML5', 'jQuery', 'CSS']),
   ProjectItem(
-      image: 'images/placeholder.jpg',
+      image: 'lib/assets/images/placeholder.jpg',
       title: 'LostOnes',
       description: 'Multi-page Pet Adoption Platform',
       technologies: ['Express', 'React', 'bCrypt', 'MongoDB']),
   ProjectItem(
-      image: 'images/placeholder.jpg',
+      image: 'lib/assets/images/placeholder.jpg',
       title: 'EventWire',
       description: 'An Event/Party Planning App',
       technologies: ['React', 'HTML5', 'MongoDB'])

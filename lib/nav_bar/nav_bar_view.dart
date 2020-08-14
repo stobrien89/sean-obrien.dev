@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_v2/components/mobile_desktop_view_builder.dart';
 import 'package:portfolio_v2/portfolio/portfolio_view.dart';
 import 'package:provider/provider.dart';
@@ -26,9 +27,11 @@ class NavDesktopView extends StatelessWidget {
       height: 100,
       width: 1507,
       padding: const EdgeInsets.symmetric(horizontal: 20),
+      color: Color.fromRGBO(252, 23, 34, 1),
       child: Row(
         children: [
-          FlutterLogo(),
+          Image.asset('lib/assets/images/logo.png',
+              height: 100, width: 100, fit: BoxFit.fitHeight),
           Spacer(),
           for (var item in navItemsList)
             NavBarItem(
@@ -57,10 +60,10 @@ class NavMobileView extends StatelessWidget {
     return Container(
         height: 60,
         width: double.infinity,
+        color: Color.fromRGBO(252, 23, 34, 1),
         child: Row(
           children: [
-            SizedBox(width: 20),
-            FlutterLogo(),
+            Image.asset('lib/assets/images/logo.png'),
             Spacer(),
             IconButton(
               icon: Icon(Icons.menu),
@@ -92,10 +95,12 @@ class NavBarItem extends StatelessWidget {
         hoverColor: Colors.transparent,
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
-        child: Text(
-          text,
-          style: TextStyle(fontSize: isSmall ? 17 : 24),
-        ),
+        child: Text(text,
+            style: GoogleFonts.oswald(
+              color: Colors.white,
+              fontSize: isSmall ? 17 : 24,
+              fontWeight: FontWeight.w200,
+            )),
       ),
     );
   }
