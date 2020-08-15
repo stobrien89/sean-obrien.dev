@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_v2/components/desktop_view_builder.dart';
 import 'package:portfolio_v2/components/mobile_desktop_view_builder.dart';
@@ -57,17 +58,20 @@ class ProjectsDesktopView extends StatelessWidget {
       titleText: ProjectsView.title,
       children: [
         SizedBox(height: 20),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            for (final item in kProjectItems)
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ProjectItemBody(item: item),
-                ),
-              )
-          ],
+        CarouselSlider(
+          options: CarouselOptions(height: 800.0),
+          items: kProjectItems.map((i) {
+            return Builder(
+              builder: (BuildContext context) {
+                return Container(
+                    width: MediaQuery.of(context).size.width,
+                    margin: EdgeInsets.symmetric(horizontal: 5.0),
+                    decoration:
+                        BoxDecoration(color: Color.fromRGBO(137, 67, 149, 1)),
+                    child: ProjectItemBody(item: i));
+              },
+            );
+          }).toList(),
         ),
         SizedBox(height: 70)
       ],
@@ -84,3 +88,14 @@ class ProjectsMobileView extends StatelessWidget {
     );
   }
 }
+
+// children: [
+// for (final item in kProjectItems)
+// Expanded(
+//   child: Padding(
+//     padding: const EdgeInsets.all(8.0),
+//     child: ProjectItemBody(item: item),
+//   ),
+// )
+// ],
+// ),

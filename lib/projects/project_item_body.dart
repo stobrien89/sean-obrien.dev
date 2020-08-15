@@ -12,15 +12,18 @@ class ProjectItemBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Image.asset(item.image),
-        SizedBox(height: 15),
+        SizedBox(
+          height: 50,
+        ),
         Text(
           item.title,
           style: Theme.of(context).textTheme.headline4,
         ),
-        SizedBox(height: 10),
+        SizedBox(height: 20),
+        Image.asset(item.image),
+        SizedBox(height: 15),
         Text(
           item.description,
           style: TextStyle(fontSize: 17),

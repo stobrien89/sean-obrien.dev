@@ -14,7 +14,7 @@ class DesktopViewBuilder extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 50),
       width: kInitWidth,
-      color: Colors.yellow,
+      color: Color.fromRGBO(91, 121, 171, 1),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
