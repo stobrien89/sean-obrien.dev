@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_v2/components/mobile_desktop_view_builder.dart';
 import 'package:portfolio_v2/portfolio/portfolio_view.dart';
 import 'package:provider/provider.dart';
+import 'package:portfolio_v2/utils/hover_extensions.dart';
 
 class NavBarView extends StatelessWidget {
   @override
@@ -27,7 +28,6 @@ class NavDesktopView extends StatelessWidget {
       height: 100,
       width: 1507,
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      color: Color.fromRGBO(252, 23, 34, 1),
       child: Row(
         children: [
           Image.asset('lib/assets/images/logo.png',
@@ -60,7 +60,6 @@ class NavMobileView extends StatelessWidget {
     return Container(
         height: 60,
         width: double.infinity,
-        color: Color.fromRGBO(252, 23, 34, 1),
         child: Row(
           children: [
             Image.asset('lib/assets/images/logo.png'),
@@ -97,11 +96,11 @@ class NavBarItem extends StatelessWidget {
         highlightColor: Colors.transparent,
         child: Text(text,
             style: GoogleFonts.oswald(
-              color: Colors.white,
+              color: Color.fromRGBO(137, 67, 149, 1),
               fontSize: isSmall ? 17 : 24,
-              fontWeight: FontWeight.w200,
+              fontWeight: FontWeight.w300,
             )),
-      ),
+      ).moveUpOnHover,
     );
   }
 }

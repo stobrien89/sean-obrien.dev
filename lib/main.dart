@@ -17,8 +17,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         textTheme: TextTheme(
           headline2: GoogleFonts.oswald(
-            color: Colors.black,
-          ),
+              color: Colors.white, fontWeight: FontWeight.w300),
           headline4: GoogleFonts.oswald(
             fontSize: 30,
             color: Colors.black,

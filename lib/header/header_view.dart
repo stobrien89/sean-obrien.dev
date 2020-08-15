@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_v2/components/mobile_desktop_view_builder.dart';
 import 'package:portfolio_v2/utils/constants.dart';
 import 'package:portfolio_v2/utils/hover_extensions.dart';
@@ -28,7 +29,7 @@ class HeaderDesktopView extends StatelessWidget {
     return Container(
         height: 864,
         width: kInitWidth,
-        color: Colors.red,
+        color: Color.fromRGBO(46, 184, 155, 1),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 50.0),
           child: Row(
@@ -57,7 +58,7 @@ class HeaderBody extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         AutoSizeText(
-          "Hello, my name is Sean O'Brien",
+          "Hello, my name is Sean.",
           style: Theme.of(context).textTheme.headline2,
           maxLines: 1,
         ),
@@ -77,14 +78,14 @@ class HeaderBody extends StatelessWidget {
           style: TextStyle(fontSize: 24),
           maxLines: 3,
         ),
-        SizedBox(height: isMobile ?? false ? 20 : 40),
+        SizedBox(height: isMobile ?? false ? 40 : 80),
         FlatButton(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
               Radius.circular(7),
             ),
           ),
-          color: Colors.black,
+          color: Color.fromRGBO(137, 67, 149, 1),
           onPressed: () {},
           child: Padding(
             padding: EdgeInsets.symmetric(
@@ -92,8 +93,10 @@ class HeaderBody extends StatelessWidget {
                 horizontal: isMobile ?? false ? 8 : 15),
             child: Text(
               'Contact Me',
-              style: TextStyle(
-                  fontSize: isMobile ?? false ? 20 : 24, color: Colors.white),
+              style: GoogleFonts.oswald(
+                  fontSize: isMobile ?? false ? 20 : 24,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w200),
             ),
           ),
         ).moveUpOnHover,
@@ -115,6 +118,7 @@ class HeaderMobileView extends StatelessWidget {
       height: height * .9,
       width: width,
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+      color: Color.fromRGBO(46, 184, 155, 1),
       child: Column(
         children: [
           FlutterLogo(size: height * .3),
