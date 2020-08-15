@@ -4,17 +4,19 @@ import '../utils/constants.dart';
 class DesktopViewBuilder extends StatelessWidget {
   final String titleText;
   final List<Widget> children;
+  final backgroundColor;
   const DesktopViewBuilder({
     Key key,
     @required this.titleText,
     @required this.children,
+    @required this.backgroundColor,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 50),
       width: kInitWidth,
-      color: Color.fromRGBO(91, 121, 171, 1),
+      color: backgroundColor,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

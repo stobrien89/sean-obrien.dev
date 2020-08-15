@@ -56,6 +56,7 @@ class ProjectsDesktopView extends StatelessWidget {
   Widget build(BuildContext context) {
     return DesktopViewBuilder(
       titleText: ProjectsView.title,
+      backgroundColor: Color.fromRGBO(91, 121, 171, 1),
       children: [
         SizedBox(height: 20),
         CarouselSlider(
@@ -67,7 +68,7 @@ class ProjectsDesktopView extends StatelessWidget {
                     width: MediaQuery.of(context).size.width,
                     margin: EdgeInsets.symmetric(horizontal: 5.0),
                     decoration:
-                        BoxDecoration(color: Color.fromRGBO(137, 67, 149, 1)),
+                        BoxDecoration(color: Color.fromRGBO(211, 211, 211, 1)),
                     child: ProjectItemBody(item: i));
               },
             );

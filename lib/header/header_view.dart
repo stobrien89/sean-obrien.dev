@@ -37,7 +37,10 @@ class HeaderDesktopView extends StatelessWidget {
               Expanded(
                 child: HeaderBody(),
               ),
-              FlutterLogo(size: 300)
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: FlutterLogo(size: 300),
+              )
             ],
           ),
         ));
@@ -69,8 +72,20 @@ class HeaderBody extends StatelessWidget {
         ),
         SizedBox(height: isMobile ?? false ? 18 : 37),
         AutoSizeText(
-          "I have 2 years of experience in software development",
-          style: TextStyle(fontSize: 24),
+          "I have 2 years of experience in software development and over 6 years of experience working in tech. ",
+          style: GoogleFonts.montserrat(
+              fontSize: 24,
+              color: Color.fromRGBO(211, 211, 211, 1),
+              fontWeight: FontWeight.w300),
+          maxLines: 4,
+        ),
+        SizedBox(height: isMobile ?? false ? 10 : 37),
+        AutoSizeText(
+          "I love building websites with a focus on user experience",
+          style: GoogleFonts.montserrat(
+              fontSize: 24,
+              color: Color.fromRGBO(211, 211, 211, 1),
+              fontWeight: FontWeight.w300),
           maxLines: 3,
         ),
         SizedBox(height: isMobile ?? false ? 40 : 80),
