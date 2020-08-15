@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:portfolio_v2/utils/hover_extensions.dart';
 
@@ -26,11 +27,18 @@ class FooterDesktopView extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 50.0),
         child: Row(
           children: [
-            Text("© Sean O'Brien $currentYear -- "),
+            Text(
+              "© Sean O'Brien $currentYear — ",
+              style: GoogleFonts.oswald(
+                color: Color.fromRGBO(137, 67, 149, 1),
+              ),
+            ),
             InkWell(
               child: Text(
                 'Source Code',
-                style: TextStyle(decoration: TextDecoration.underline),
+                style: GoogleFonts.oswald(
+                    color: Color.fromRGBO(137, 67, 149, 1),
+                    decoration: TextDecoration.underline),
               ),
               mouseCursor: MaterialStateMouseCursor.clickable,
               splashColor: Colors.transparent,
@@ -44,7 +52,7 @@ class FooterDesktopView extends StatelessWidget {
               IconButton(
                 icon: social.icon,
                 onPressed: () => launch(social.url),
-                color: Colors.redAccent,
+                color: Color.fromRGBO(46, 184, 155, 1),
                 splashColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 hoverColor: Colors.transparent,
@@ -80,12 +88,19 @@ class FooterMobileView extends StatelessWidget {
               ],
             ),
             SizedBox(height: 20),
-            Text("© Sean O'Brien $currentYear"),
+            Text(
+              "© Sean O'Brien $currentYear",
+              style: GoogleFonts.oswald(
+                color: Color.fromRGBO(137, 67, 149, 1),
+              ),
+            ),
             SizedBox(height: 20),
             InkWell(
               child: Text(
                 'Source Code',
-                style: TextStyle(decoration: TextDecoration.underline),
+                style: GoogleFonts.oswald(
+                    color: Color.fromRGBO(137, 67, 149, 1),
+                    decoration: TextDecoration.underline),
               ),
               mouseCursor: MaterialStateMouseCursor.clickable,
               splashColor: Colors.transparent,
@@ -118,5 +133,7 @@ final socials = [
   SocialInfo(
       icon: FaIcon(FontAwesomeIcons.twitter),
       url: 'https://twitter.com/SeanOBDev'),
-  SocialInfo(icon: FaIcon(FontAwesomeIcons.medium), url: 'https://medium.com'),
+  SocialInfo(
+      icon: FaIcon(FontAwesomeIcons.medium),
+      url: 'https://medium.com/@obrien.sean.dev'),
 ];
