@@ -94,6 +94,7 @@ class BlogMobileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MobileViewBuilder(
+      backgroundColor: Color.fromRGBO(46, 184, 155, 1),
       titleText: BlogView.title,
       children: [
         for (var i = 0; i < 2; i++)

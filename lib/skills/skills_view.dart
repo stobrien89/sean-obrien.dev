@@ -61,6 +61,7 @@ class SkillsMobileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MobileViewBuilder(
+      backgroundColor: Color.fromRGBO(46, 184, 155, 1),
       titleText: SkillsView.title,
       children: [
         for (var i = 0; i < skills.length; i++) ...[

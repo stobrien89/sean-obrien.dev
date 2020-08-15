@@ -84,6 +84,7 @@ class ProjectsMobileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MobileViewBuilder(
+      backgroundColor: Color.fromRGBO(91, 121, 171, 1),
       titleText: ProjectsView.title,
       children: [for (final item in kProjectItems) ProjectItemBody(item: item)],
     );

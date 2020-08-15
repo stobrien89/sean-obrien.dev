@@ -63,6 +63,7 @@ class ExperienceMobileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MobileViewBuilder(
+      backgroundColor: Color.fromRGBO(91, 121, 171, 1),
       titleText: ExperienceView.title,
       children: [
         Column(
