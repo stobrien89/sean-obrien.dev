@@ -25,6 +25,7 @@ class ExperienceDesktopView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DesktopViewBuilder(
+      backgroundColor: Color.fromRGBO(91, 121, 171, 1),
       titleText: ExperienceView.title,
       children: [
         SizedBox(height: 20),

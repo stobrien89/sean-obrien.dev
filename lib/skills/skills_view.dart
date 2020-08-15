@@ -29,6 +29,7 @@ class SkillsDesktopView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DesktopViewBuilder(
+      backgroundColor: Color.fromRGBO(46, 184, 155, 1),
       titleText: SkillsView.title,
       children: [
         SizedBox(height: 20),
