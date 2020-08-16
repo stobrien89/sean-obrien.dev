@@ -20,20 +20,37 @@ class ProjectItem {
 
 final kProjectItems = [
   ProjectItem(
-      image: 'lib/assets/images/placeholder.jpg',
+      image: 'lib/assets/images/digthosediglett.png',
       title: 'Dig Those Diglett',
-      description: 'A simple pokemon based game',
+      description: 'A pokémon-inspired browser game',
       technologies: ['HTML5', 'jQuery', 'CSS']),
   ProjectItem(
-      image: 'lib/assets/images/placeholder.jpg',
+      image: 'lib/assets/images/lostones.png',
       title: 'LostOnes',
-      description: 'Multi-page Pet Adoption Platform',
-      technologies: ['Express', 'React', 'bCrypt', 'MongoDB']),
+      description: 'A full-stack Pet Adoption Platform',
+      technologies: [
+        'React',
+        'Express',
+        'MongoDB',
+        'Passport.js',
+        'Foundation'
+      ]),
   ProjectItem(
-      image: 'lib/assets/images/placeholder.jpg',
+      image: 'lib/assets/images/eventwire.png',
       title: 'EventWire',
-      description: 'An Event/Party Planning App',
-      technologies: ['React', 'HTML5', 'MongoDB'])
+      description: 'A full-stack event and party planning Platform',
+      technologies: [
+        'React',
+        'Express',
+        'MongoDB',
+        'Passport-JWT',
+        'Bootstrap'
+      ]),
+  ProjectItem(
+      image: 'lib/assets/images/bookify.png',
+      title: 'Bookify',
+      description: 'A full-stack booking site geared toward travel',
+      technologies: ['Rails', 'Webpack', 'Devise', 'OAuth', 'Bootstrap'])
 ];
 
 class ProjectsView extends StatelessWidget {
@@ -60,17 +77,23 @@ class ProjectsDesktopView extends StatelessWidget {
       children: [
         SizedBox(height: 20),
         CarouselSlider(
-          options: CarouselOptions(height: 800.0),
+          options: CarouselOptions(
+            enlargeCenterPage: true,
+            aspectRatio: 16 / 9,
+            enableInfiniteScroll: true,
+            viewportFraction: 0.6,
+          ),
           items: kProjectItems.map((i) {
-            return Builder(
-              builder: (BuildContext context) {
-                return Container(
-                    width: MediaQuery.of(context).size.width,
-                    margin: EdgeInsets.symmetric(horizontal: 5.0),
-                    decoration:
-                        BoxDecoration(color: Color.fromRGBO(211, 211, 211, 1)),
-                    child: ProjectItemBody(item: i));
-              },
+            return FittedBox(
+              child: Card(
+                  elevation: 10,
+                  color: Color.fromRGBO(163, 171, 189, 1),
+                  margin: EdgeInsets.symmetric(horizontal: 5.0),
+                  // decoration: BoxDecoration(
+                  //   color: Color.fromRGBO(211, 211, 211, 1),
+                  //   borderRadius: BorderRadius.all(Radius.circular(5)),
+
+                  child: ProjectItemBody(item: i)),
             );
           }).toList(),
         ),

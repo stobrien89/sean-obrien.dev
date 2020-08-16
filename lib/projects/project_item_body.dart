@@ -14,15 +14,23 @@ class ProjectItemBody extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        SizedBox(
-          height: 50,
+        // SizedBox(
+        //   height: 50,
+        // ),
+        // Text(
+        //   item.title,
+        //   style: Theme.of(context).textTheme.headline4,
+        // ),
+        // SizedBox(height: 20),
+        Image.asset(
+          item.image,
+          fit: BoxFit.contain,
         ),
+        SizedBox(height: 15),
         Text(
           item.title,
           style: Theme.of(context).textTheme.headline4,
         ),
-        SizedBox(height: 20),
-        Image.asset(item.image),
         SizedBox(height: 15),
         Text(
           item.description,
@@ -30,7 +38,9 @@ class ProjectItemBody extends StatelessWidget {
         ),
         SizedBox(height: 10),
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text('Technologies Used: '),
             for (final tech in item.technologies)
               Padding(
                 padding: const EdgeInsets.only(right: 8.0),
