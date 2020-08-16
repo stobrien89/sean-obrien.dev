@@ -81,7 +81,7 @@ class ProjectsDesktopView extends StatelessWidget {
             enlargeCenterPage: true,
             aspectRatio: 16 / 9,
             enableInfiniteScroll: true,
-            viewportFraction: 0.6,
+            viewportFraction: 0.75,
           ),
           items: kProjectItems.map((i) {
             return FittedBox(
@@ -107,10 +107,35 @@ class ProjectsMobileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MobileViewBuilder(
-      backgroundColor: Color.fromRGBO(91, 121, 171, 1),
-      titleText: ProjectsView.title,
-      children: [for (final item in kProjectItems) ProjectItemBody(item: item)],
-    );
+        backgroundColor: Color.fromRGBO(91, 121, 171, 1),
+        titleText: ProjectsView.title,
+        children: [
+          CarouselSlider(
+            options: CarouselOptions(
+              enlargeCenterPage: true,
+              aspectRatio: 1.0,
+              enableInfiniteScroll: true,
+              viewportFraction: 0.85,
+            ),
+            items: kProjectItems.map((i) {
+              return FittedBox(
+                // fit: BoxFit.contain,
+                child: Card(
+                    elevation: 10,
+                    color: Color.fromRGBO(163, 171, 189, 1),
+                    margin: EdgeInsets.symmetric(horizontal: 5.0),
+                    // decoration: BoxDecoration(
+                    //   color: Color.fromRGBO(211, 211, 211, 1),
+                    //   borderRadius: BorderRadius.all(Radius.circular(5)),
+
+                    child: ProjectItemBody(item: i)),
+              );
+            }).toList(),
+          ),
+          SizedBox(
+            height: 70,
+          )
+        ]);
   }
 }
 
@@ -124,3 +149,6 @@ class ProjectsMobileView extends StatelessWidget {
 // )
 // ],
 // ),
+
+//mobile view
+// [for (final item in kProjectItems) ProjectItemBody(item: item)],
