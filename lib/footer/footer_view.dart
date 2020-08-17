@@ -80,9 +80,9 @@ class FooterMobileView extends StatelessWidget {
                   IconButton(
                     icon: social.icon,
                     onPressed: () => launch(social.url),
-                    color: Colors.redAccent,
-                    splashColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
+                    color: Color.fromRGBO(46, 184, 155, 1),
+                    splashColor: Color.fromRGBO(137, 67, 149, .5),
+                    highlightColor: Color.fromRGBO(137, 67, 149, .5),
                     hoverColor: Colors.transparent,
                   )
               ],
