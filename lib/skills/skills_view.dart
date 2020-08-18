@@ -30,7 +30,7 @@ class SkillsDesktopView extends StatelessWidget {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final isSmall = width < 1100;
-    final imageWidth = width * .37;
+    final imageWidth = width * .30;
     return DesktopViewBuilder(
       backgroundColor: Color.fromRGBO(46, 184, 155, 1),
       titleText: SkillsView.title,
@@ -49,7 +49,7 @@ class SkillsDesktopView extends StatelessWidget {
             ),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.only(left: 200.0),
+                padding: const EdgeInsets.only(left: 100),
                 child: Column(
                   children: [
                     Text('This is some stuff Im good at'),
@@ -99,13 +99,20 @@ class SkillsMobileView extends StatelessWidget {
       backgroundColor: Color.fromRGBO(46, 184, 155, 1),
       titleText: SkillsView.title,
       children: [
+        Image.asset('lib/assets/images/engineer.png'),
+        Text('This is some stuff Im good at'),
+        Text('I love learning new technologies'),
+        SizedBox(
+          height: 50,
+        ),
         for (var i = 0; i < skills.length; i++) ...[
           OutlineSkillsContainer(
             i: i,
             isMobile: true,
           ),
           SizedBox(height: 10)
-        ]
+        ],
+        SizedBox(height: 50)
       ],
     );
   }

@@ -75,7 +75,7 @@ class ProjectsDesktopView extends StatelessWidget {
       titleText: ProjectsView.title,
       backgroundColor: Color.fromRGBO(91, 121, 171, 1),
       children: [
-        SizedBox(height: 20),
+        SizedBox(height: 70),
         CarouselSlider(
           options: CarouselOptions(
             enlargeCenterPage: true,
