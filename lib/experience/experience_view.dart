@@ -28,7 +28,7 @@ class ExperienceDesktopView extends StatelessWidget {
       backgroundColor: Color.fromRGBO(91, 121, 171, 1),
       titleText: ExperienceView.title,
       children: [
-        SizedBox(height: 20),
+        SizedBox(height: 50),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
