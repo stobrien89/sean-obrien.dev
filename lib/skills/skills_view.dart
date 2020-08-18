@@ -28,25 +28,60 @@ class SkillsDesktopView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final isSmall = width < 1100;
+    final imageWidth = width * .37;
     return DesktopViewBuilder(
       backgroundColor: Color.fromRGBO(46, 184, 155, 1),
       titleText: SkillsView.title,
       children: [
-        SizedBox(height: 20),
-        for (var rowIndex = 0; rowIndex < skills.length / 4; rowIndex++) ...[
-          Row(
-            children: [
-              for (var i = 0; i < skills.length / 3; i++)
-                Expanded(
-                  child: Padding(
-                    padding: EdgeInsets.only(left: i != 0 ? 8.0 : 0),
-                    child: OutlineSkillsContainer(i: i, rowIndex: rowIndex),
-                  ),
+        SizedBox(height: 70),
+        Row(
+          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              children: [
+                Image.asset(
+                  'lib/assets/images/engineer.png',
+                  height: isSmall ? imageWidth : 500,
+                )
+              ],
+            ),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 200.0),
+                child: Column(
+                  children: [
+                    Text('This is some stuff Im good at'),
+                    Text('I love learning new technologies'),
+                    SizedBox(
+                      height: 50,
+                    ),
+                    for (var rowIndex = 0;
+                        rowIndex < skills.length / 4;
+                        rowIndex++) ...[
+                      Row(
+                        children: [
+                          for (var i = 0; i < skills.length / 3; i++)
+                            Expanded(
+                              // width: 120,
+                              child: Padding(
+                                padding:
+                                    EdgeInsets.only(left: i != 0 ? 12.0 : 0),
+                                child: OutlineSkillsContainer(
+                                    i: i, rowIndex: rowIndex),
+                              ),
+                            ),
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                    ],
+                  ],
                 ),
-            ],
-          ),
-          SizedBox(height: 10),
-        ],
+              ),
+            ),
+          ],
+        ),
         SizedBox(height: 70),
       ],
     );

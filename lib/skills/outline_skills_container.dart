@@ -22,9 +22,10 @@ class OutlineSkillsContainer extends StatelessWidget {
       width: isMobile ?? false ? double.infinity : null,
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
+          color: colors.elementAt(i % colors.length),
           border:
               Border.all(width: 3, color: colors.elementAt(i % colors.length)),
-          borderRadius: BorderRadius.circular(3)),
+          borderRadius: BorderRadius.circular(15)),
       child: Text(skills.elementAt(parsedIndex),
           style: Theme.of(context).textTheme.headline4),
     );
