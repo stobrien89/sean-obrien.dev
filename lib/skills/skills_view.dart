@@ -82,7 +82,7 @@ class SkillsDesktopView extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 70),
+        SizedBox(height: 120),
       ],
     );
   }

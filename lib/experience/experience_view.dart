@@ -29,29 +29,27 @@ class ExperienceDesktopView extends StatelessWidget {
       titleText: ExperienceView.title,
       children: [
         SizedBox(height: 50),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            for (var rowIndex = 0;
-                rowIndex < experiences.length / 2;
-                rowIndex++)
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
+        Padding(
+          padding: const EdgeInsets.only(left: 50),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              for (var rowIndex = 0; rowIndex < experiences.length; rowIndex++)
+                Row(
                   children: [
-                    for (var index = 0; index < experiences.length / 2; index++)
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 50),
                         child: ExperienceContainer(
-                          experience:
-                              experiences.elementAt(rowIndex * 2 + index),
-                          index: rowIndex * 2 + index,
+                          experience: experiences.elementAt(rowIndex),
+                          index: rowIndex,
                         ),
                       ),
+                    ),
                   ],
                 ),
-              ),
-          ],
+            ],
+          ),
         ),
         SizedBox(height: 70),
       ],

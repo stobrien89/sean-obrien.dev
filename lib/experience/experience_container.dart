@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_v2/utils/colors.dart';
 
 class ExperienceContainer extends StatelessWidget {
@@ -13,6 +14,8 @@ class ExperienceContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final isMobile = width < 800;
     final colors = ColorAssets.all;
     return Container(
         padding: EdgeInsets.all(8),
@@ -23,24 +26,46 @@ class ExperienceContainer extends StatelessWidget {
           ),
           borderRadius: BorderRadius.circular(3),
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Text(
-              experience.company,
-              style: textStyle(isBold: true),
+            Image.asset(
+              experience.logo,
+              height: isMobile ? 100 : 200,
             ),
-            SizedBox(height: 10),
-            Text(
-              experience.timeline,
-              style: textStyle(isGray: true),
+            Padding(
+              padding: isMobile
+                  ? const EdgeInsets.only(left: 50)
+                  : const EdgeInsets.only(left: 100),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    experience.company,
+                    style: GoogleFonts.oswald(
+                      fontSize: 24,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    experience.timeline,
+                    style: GoogleFonts.roboto(
+                        color: Colors.grey,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w300,
+                        fontStyle: FontStyle.italic),
+                  ),
+                  SizedBox(height: 10),
+                  for (final item in experience.description)
+                    Text(
+                      item,
+                      style: GoogleFonts.openSans(
+                        fontSize: 18,
+                      ),
+                    )
+                ],
+              ),
             ),
-            SizedBox(height: 10),
-            for (final item in experience.description)
-              Text(
-                item,
-                style: textStyle(),
-              )
           ],
         ));
   }
@@ -55,10 +80,12 @@ TextStyle textStyle({bool isBold, bool isGray}) {
 }
 
 class ExperienceInfo {
+  final String logo;
   final String company;
   final String timeline;
   final List<String> description;
   ExperienceInfo({
+    @required this.logo,
     @required this.company,
     @required this.timeline,
     @required this.description,
@@ -67,6 +94,7 @@ class ExperienceInfo {
 
 final experiences = [
   ExperienceInfo(
+      logo: 'lib/assets/images/ga.png',
       company: 'General Assembly',
       timeline: 'Feburary 2020 - August 2020',
       description: [
@@ -75,19 +103,22 @@ final experiences = [
         '- led team of 4 developers in group project'
       ]),
   ExperienceInfo(
+      logo: 'lib/assets/images/rover.png',
       company: 'Rover.com',
       timeline: 'August 2017 - April 2020',
       description: ['- Stuff', '- More Stuff', '- Buzzwords']),
   ExperienceInfo(
-      company: 'Apple Inc.',
-      timeline: 'January 2014 - February 2016',
-      description: ['- Stuff', '- Blah Blahs', '- Buzzwords']),
-  ExperienceInfo(
-      company: 'General Assembly',
+      logo: 'lib/assets/images/alfa.png',
+      company: 'Alfa Insurance Company',
       timeline: 'Feburary 2020 - August 2020',
       description: [
         '- Build 23123 projects in Ruby, JavaScript',
         '- Hands-on experience with Web Dev stuff',
         '- led team of 4 developers in group project'
       ]),
+  ExperienceInfo(
+      logo: 'lib/assets/images/apple.png',
+      company: 'Apple Inc.',
+      timeline: 'January 2014 - February 2016',
+      description: ['- Stuff', '- Blah Blahs', '- Buzzwords']),
 ];

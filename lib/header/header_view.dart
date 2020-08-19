@@ -79,7 +79,7 @@ class HeaderBody extends StatelessWidget {
         SizedBox(height: isMobile ?? false ? 18 : 37),
         AutoSizeText(
           "I have 2 years of experience in software development and over 6 years of experience working in tech. ",
-          style: GoogleFonts.montserrat(
+          style: GoogleFonts.openSans(
               fontSize: 24,
               color: Color.fromRGBO(211, 211, 211, 1),
               fontWeight: FontWeight.w300),
@@ -88,7 +88,7 @@ class HeaderBody extends StatelessWidget {
         SizedBox(height: isMobile ?? false ? 10 : 37),
         AutoSizeText(
           "I love building websites with a focus on user experience",
-          style: GoogleFonts.montserrat(
+          style: GoogleFonts.openSans(
               fontSize: 24,
               color: Color.fromRGBO(211, 211, 211, 1),
               fontWeight: FontWeight.w300),
