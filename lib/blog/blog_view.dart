@@ -27,6 +27,9 @@ class BlogDesktopView extends StatelessWidget {
       backgroundColor: Color.fromRGBO(46, 184, 155, 1),
       titleText: BlogView.title,
       children: [
+        SizedBox(
+          height: 50,
+        ),
         Row(
           children: [
             for (var i = 0; i < 2; i++)
@@ -60,7 +63,7 @@ class BlogCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            color: Colors.redAccent,
+            color: Color.fromRGBO(240, 121, 99, 1),
             width: double.infinity,
             padding: EdgeInsets.symmetric(
               horizontal: 8,

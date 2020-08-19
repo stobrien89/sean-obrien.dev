@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_v2/utils/colors.dart';
@@ -15,7 +16,7 @@ class ExperienceContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    final isMobile = width < 800;
+    final isSmall = width < 900;
     final colors = ColorAssets.all;
     return Container(
         padding: EdgeInsets.all(8),
@@ -31,19 +32,19 @@ class ExperienceContainer extends StatelessWidget {
           children: [
             Image.asset(
               experience.logo,
-              height: isMobile ? 100 : 200,
+              height: isSmall ?? false ? 100 : 200,
             ),
             Padding(
-              padding: isMobile
-                  ? const EdgeInsets.only(left: 50)
-                  : const EdgeInsets.only(left: 100),
+              padding: isSmall ?? false
+                  ? const EdgeInsets.only(left: 25)
+                  : const EdgeInsets.only(left: 50),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     experience.company,
                     style: GoogleFonts.oswald(
-                      fontSize: 24,
+                      fontSize: isSmall ? 20 : 24,
                     ),
                   ),
                   SizedBox(height: 10),
@@ -51,16 +52,17 @@ class ExperienceContainer extends StatelessWidget {
                     experience.timeline,
                     style: GoogleFonts.roboto(
                         color: Colors.grey,
-                        fontSize: 20,
+                        fontSize: isSmall ? 16 : 20,
                         fontWeight: FontWeight.w300,
                         fontStyle: FontStyle.italic),
                   ),
                   SizedBox(height: 10),
                   for (final item in experience.description)
-                    Text(
+                    AutoSizeText(
                       item,
+                      maxLines: 1,
                       style: GoogleFonts.openSans(
-                        fontSize: 18,
+                        fontSize: isSmall ? 14 : 18,
                       ),
                     )
                 ],

@@ -18,19 +18,20 @@ class OutlineSkillsContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     final parsedIndex = isMobile ?? false ? i : (i * 3) + rowIndex;
     return Container(
-      // width: isMobile ?? false ? 300 : null,
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
           color: Color.fromRGBO(240, 121, 99, 1),
-          // colors.elementAt(i % colors.length),
           border: Border.all(
-            width: 3,
-            color: Color.fromRGBO(240, 121, 99, 1),
+            width: 2,
+            color: Color.fromRGBO(43, 125, 128, 1),
           ),
           borderRadius: BorderRadius.circular(30)),
       child: AutoSizeText(
         skills.elementAt(parsedIndex),
-        style: Theme.of(context).textTheme.headline4,
+        style: Theme.of(context)
+            .textTheme
+            .headline4
+            .copyWith(color: Color.fromRGBO(43, 125, 128, 1)),
         maxLines: 1,
       ),
       alignment: Alignment.center,
