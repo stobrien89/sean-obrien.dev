@@ -28,7 +28,7 @@ class ExperienceDesktopView extends StatelessWidget {
       backgroundColor: Color.fromRGBO(91, 121, 171, 1),
       titleText: ExperienceView.title,
       children: [
-        SizedBox(height: 50),
+        SizedBox(height: 70),
         Padding(
           padding: const EdgeInsets.only(left: 50),
           child: Column(

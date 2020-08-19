@@ -1,7 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio_v2/utils/colors.dart';
 
 class ExperienceContainer extends StatelessWidget {
   const ExperienceContainer({
@@ -16,41 +15,75 @@ class ExperienceContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    final isSmall = width < 900;
-    final colors = ColorAssets.all;
     return Container(
         padding: EdgeInsets.all(8),
-        decoration: BoxDecoration(
-          border: Border.all(
-            width: 3,
-            color: colors.elementAt(index % colors.length),
-          ),
-          borderRadius: BorderRadius.circular(3),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Image.asset(
-              experience.logo,
-              height: isSmall ?? false ? 100 : 200,
-            ),
-            Padding(
-              padding: isSmall ?? false
-                  ? const EdgeInsets.only(left: 25)
-                  : const EdgeInsets.only(left: 50),
-              child: Column(
+        child: width > 1100 ?? false
+            ? Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Image.asset(
+                    experience.logo,
+                    height: 250,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 50),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          experience.company,
+                          style: GoogleFonts.oswald(
+                            fontSize: 24,
+                          ),
+                        ),
+                        Text(
+                          experience.position,
+                          style: GoogleFonts.roboto(
+                            fontSize: 22,
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        Text(
+                          experience.timeline,
+                          style: GoogleFonts.roboto(
+                              color: Colors.grey,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w300,
+                              fontStyle: FontStyle.italic),
+                        ),
+                        SizedBox(height: 10),
+                        for (final item in experience.description)
+                          AutoSizeText(
+                            item,
+                            maxLines: 1,
+                            style: GoogleFonts.openSans(
+                              fontSize: 18,
+                            ),
+                          )
+                      ],
+                    ),
+                  ),
+                ],
+              )
+            : Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Image.asset(
+                    experience.logo,
+                    height: 250,
+                  ),
+                  SizedBox(height: 40),
                   Text(
                     experience.company,
                     style: GoogleFonts.oswald(
-                      fontSize: isSmall ? 20 : 24,
+                      fontSize: 24,
                     ),
                   ),
+                  SizedBox(height: 5),
                   Text(
                     experience.position,
                     style: GoogleFonts.roboto(
-                      fontSize: isSmall ? 18 : 22,
+                      fontSize: 22,
                     ),
                   ),
                   SizedBox(height: 10),
@@ -58,24 +91,27 @@ class ExperienceContainer extends StatelessWidget {
                     experience.timeline,
                     style: GoogleFonts.roboto(
                         color: Colors.grey,
-                        fontSize: isSmall ? 16 : 20,
+                        fontSize: 20,
                         fontWeight: FontWeight.w300,
                         fontStyle: FontStyle.italic),
                   ),
-                  SizedBox(height: 10),
-                  for (final item in experience.description)
-                    AutoSizeText(
-                      item,
-                      maxLines: 1,
-                      style: GoogleFonts.openSans(
-                        fontSize: isSmall ? 14 : 18,
-                      ),
-                    )
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(height: 10),
+                      for (final item in experience.description)
+                        AutoSizeText(
+                          item,
+                          maxLines: 3,
+                          style: GoogleFonts.openSans(
+                            fontSize: 18,
+                          ),
+                        )
+                    ],
+                  ),
+                  SizedBox(height: 40)
                 ],
-              ),
-            ),
-          ],
-        ));
+              ));
   }
 }
 
