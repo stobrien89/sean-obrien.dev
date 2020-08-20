@@ -16,7 +16,7 @@ class BlogView extends StatelessWidget {
     Key key,
   }) : super(key: key);
 
-  static const title = 'Blog';
+  static const title = 'Articles';
   @override
   Widget build(BuildContext context) {
     return FutureProvider<List<RssItem>>(
@@ -71,7 +71,10 @@ class BlogMobileView extends StatelessWidget {
           BlogCard(
             article: article,
             isMobile: true,
-          )
+          ),
+        SizedBox(
+          height: 70,
+        )
       ],
     );
   }

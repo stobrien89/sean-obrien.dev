@@ -37,8 +37,8 @@ class _PortfolioViewState extends State<PortfolioView> with AfterLayoutMixin {
       navItemsList = [
         NavItem('Projects', key: projectKey),
         NavItem('Skills', key: skillsKey),
-        NavItem('About', key: experienceKey),
-        NavItem('Blog', key: blogKey),
+        NavItem('Experience', key: experienceKey),
+        NavItem('Articles', key: blogKey),
       ];
     });
   }
