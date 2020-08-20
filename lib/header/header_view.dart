@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_v2/components/mobile_desktop_view_builder.dart';
 import 'package:portfolio_v2/utils/constants.dart';
 import 'package:portfolio_v2/utils/hover_extensions.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HeaderView extends StatelessWidget {
   const HeaderView({
@@ -102,13 +103,13 @@ class HeaderBody extends StatelessWidget {
             ),
           ),
           color: Color.fromRGBO(137, 67, 149, 1),
-          onPressed: () {},
+          onPressed: () => launch('mailto:<obrien.sean.dev@gmail.com>'),
           child: Padding(
             padding: EdgeInsets.symmetric(
                 vertical: isMobile ?? false ? 10 : 17,
                 horizontal: isMobile ?? false ? 8 : 15),
             child: Text(
-              'Contact Me',
+              'Get In Touch',
               style: GoogleFonts.oswald(
                   fontSize: isMobile ?? false ? 20 : 24,
                   color: Colors.white,

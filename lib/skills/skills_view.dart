@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_v2/components/desktop_view_builder.dart';
 import 'package:portfolio_v2/components/mobile_desktop_view_builder.dart';
 import 'package:portfolio_v2/components/mobile_view_builder.dart';
@@ -52,8 +53,16 @@ class SkillsDesktopView extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 100),
                 child: Column(
                   children: [
-                    Text('This is some stuff Im good at'),
-                    Text('I love learning new technologies'),
+                    Text('This is some stuff Im good at',
+                        style: GoogleFonts.openSans(
+                            color: Colors.white,
+                            fontSize: 24,
+                            fontWeight: FontWeight.w100)),
+                    Text('I love learning new technologies',
+                        style: GoogleFonts.openSans(
+                            color: Colors.white,
+                            fontSize: 24,
+                            fontWeight: FontWeight.w100)),
                     SizedBox(
                       height: 50,
                     ),
@@ -100,8 +109,17 @@ class SkillsMobileView extends StatelessWidget {
       titleText: SkillsView.title,
       children: [
         Image.asset('lib/assets/images/engineer.png'),
-        Text('This is some stuff Im good at'),
-        Text('I love learning new technologies'),
+        SizedBox(height: 50),
+        Text('This is some stuff Im good at',
+            style: GoogleFonts.openSans(
+                color: Colors.white,
+                fontSize: 24,
+                fontWeight: FontWeight.w100)),
+        Text('I love learning new technologies',
+            style: GoogleFonts.openSans(
+                color: Colors.white,
+                fontSize: 24,
+                fontWeight: FontWeight.w100)),
         SizedBox(
           height: 50,
         ),
