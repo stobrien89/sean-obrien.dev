@@ -68,7 +68,7 @@ class HeaderBody extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         AutoSizeText(
-          "Hello, my name is Sean.",
+          "Hi, I'm Sean.",
           style: Theme.of(context).textTheme.headline2,
           maxLines: 1,
         ),
@@ -77,21 +77,23 @@ class HeaderBody extends StatelessWidget {
           style: Theme.of(context).textTheme.headline2,
           maxLines: 1,
         ),
-        SizedBox(height: isMobile ?? false ? 18 : 37),
+        SizedBox(height: isMobile ?? false ? 20 : 50),
         AutoSizeText(
           "I have 2 years of experience in software development and over 6 years of experience working in tech. ",
-          style: GoogleFonts.openSans(
-              fontSize: 24,
-              color: Color.fromRGBO(211, 211, 211, 1),
+          style: GoogleFonts.montserrat(
+              fontSize: 22,
+              letterSpacing: .5,
+              color: Color.fromRGBO(137, 67, 149, 1),
               fontWeight: FontWeight.w300),
-          maxLines: 4,
+          maxLines: 5,
         ),
-        SizedBox(height: isMobile ?? false ? 10 : 37),
+        SizedBox(height: isMobile ?? false ? 20 : 50),
         AutoSizeText(
-          "I love building websites with a focus on user experience",
-          style: GoogleFonts.openSans(
-              fontSize: 24,
-              color: Color.fromRGBO(211, 211, 211, 1),
+          "I love to build applications (of any kind) with a focus on user experience.",
+          style: GoogleFonts.montserrat(
+              fontSize: 22,
+              letterSpacing: .5,
+              color: Color.fromRGBO(137, 67, 149, 1),
               fontWeight: FontWeight.w300),
           maxLines: 3,
         ),
@@ -113,7 +115,7 @@ class HeaderBody extends StatelessWidget {
               style: GoogleFonts.oswald(
                   fontSize: isMobile ?? false ? 20 : 24,
                   color: Colors.white,
-                  fontWeight: FontWeight.w200),
+                  fontWeight: FontWeight.w300),
             ),
           ),
         ).moveUpOnHover,

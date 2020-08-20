@@ -64,7 +64,7 @@ class DrawerMobileView extends StatelessWidget {
                     begin: Alignment.bottomLeft,
                     end: Alignment.topRight,
                     colors: [
-                      Color.fromRGBO(46, 184, 155, .8),
+                      Color.fromRGBO(46, 184, 155, .5),
                       Color.fromRGBO(91, 121, 171, 1),
                       // Color.fromRGBO(137, 67, 149, 1),
                     ],
