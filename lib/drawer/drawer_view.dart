@@ -24,56 +24,83 @@ class DrawerMobileView extends StatelessWidget {
     final navItemsList = context.watch<List<NavItem>>();
     final scrollController = context.watch<ScrollController>();
     return Drawer(
-      child: ListView(
-        // Important: Remove any padding from the ListView.
-        padding: EdgeInsets.zero,
-        children: <Widget>[
-          Container(
-            height: 300,
-            child: DrawerHeader(
-              child: Column(
-                children: [
-                  SizedBox(height: 30),
-                  SizedBox(
-                      width: 90,
-                      height: 90,
-                      child: CircleAvatar(
-                        backgroundImage:
-                            NetworkImage('lib/assets/images/linkedin.png'),
-                      )),
-                  SizedBox(height: 25),
-                  Text("Sean O'Brien"),
-                  Text("Software Engineer"),
-                ],
-              ),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [Colors.red, Colors.black],
-                  tileMode: TileMode.repeated,
+      child: Material(
+        color: Color.fromRGBO(46, 184, 155, 1),
+        child: ListView(
+          // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            Container(
+              height: 300,
+              child: DrawerHeader(
+                child: Column(
+                  children: [
+                    SizedBox(height: 30),
+                    SizedBox(
+                        width: 90,
+                        height: 90,
+                        child: CircleAvatar(
+                          backgroundImage:
+                              NetworkImage('lib/assets/images/linkedin.png'),
+                        )),
+                    SizedBox(height: 25),
+                    Text(
+                      "Sean O'Brien",
+                      style: GoogleFonts.roboto(
+                          fontSize: 18,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w300),
+                    ),
+                    Text(
+                      "Software Engineer",
+                      style: GoogleFonts.roboto(
+                          fontSize: 14,
+                          color: Color.fromRGBO(137, 67, 149, .8)),
+                    ),
+                  ],
+                ),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.bottomLeft,
+                    end: Alignment.topRight,
+                    colors: [
+                      Color.fromRGBO(46, 184, 155, .8),
+                      Color.fromRGBO(91, 121, 171, 1),
+                      // Color.fromRGBO(137, 67, 149, 1),
+                    ],
+                    tileMode: TileMode.repeated,
+                  ),
                 ),
               ),
             ),
-          ),
-          for (var item in navItemsList)
-            Padding(
-              padding: const EdgeInsets.only(top: 10),
-              child: ListTile(
-                title: Text(
-                  item.text,
-                  style: GoogleFonts.roboto(
-                      fontSize: 18, fontWeight: FontWeight.w300),
+            for (var item in navItemsList)
+              Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: ListTile(
+                  title: Text(
+                    item.text,
+                    style: GoogleFonts.roboto(
+                      fontSize: 18,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w300,
+                    ),
+                  ),
+                  leading: Icon(
+                    item.icon,
+                    color: Color.fromRGBO(137, 67, 149, .8),
+                  ),
+                  onTap: () {
+                    scrollController.animateTo(
+                      item.position,
+                      duration: Duration(milliseconds: 800),
+                      curve: Curves.easeInOut,
+                    );
+                    Navigator.pop(context);
+                  },
                 ),
-                onTap: () {
-                  scrollController.animateTo(
-                    item.position,
-                    duration: Duration(milliseconds: 800),
-                    curve: Curves.easeInOut,
-                  );
-                  Navigator.pop(context);
-                },
               ),
-            ),
-        ],
+          ],
+        ),
       ),
     );
   }

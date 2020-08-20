@@ -28,17 +28,17 @@ class _PortfolioViewState extends State<PortfolioView> with AfterLayoutMixin {
   List<NavItem> navItemsList = [];
 
   final ScrollController scrollController = ScrollController(
-    initialScrollOffset: 2500,
+    initialScrollOffset: 0,
   );
 
   @override
   void afterFirstLayout(BuildContext context) {
     setState(() {
       navItemsList = [
-        NavItem('Projects', key: projectKey),
-        NavItem('Skills', key: skillsKey),
-        NavItem('Experience', key: experienceKey),
-        NavItem('Articles', key: blogKey),
+        NavItem('Projects', key: projectKey, icon: Icons.collections),
+        NavItem('Skills', key: skillsKey, icon: Icons.code),
+        NavItem('Experience', key: experienceKey, icon: Icons.work),
+        NavItem('Articles', key: blogKey, icon: Icons.speaker_notes),
       ];
     });
   }
@@ -84,9 +84,11 @@ class _PortfolioViewState extends State<PortfolioView> with AfterLayoutMixin {
 class NavItem {
   final String text;
   final GlobalKey key;
+  final IconData icon;
   NavItem(
     this.text, {
     @required this.key,
+    @required this.icon,
   });
 
   double get position => _getPosition(key);

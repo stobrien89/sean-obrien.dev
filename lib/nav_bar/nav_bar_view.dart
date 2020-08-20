@@ -65,7 +65,10 @@ class NavMobileView extends StatelessWidget {
             Image.asset('lib/assets/images/logo.png'),
             Spacer(),
             IconButton(
-              icon: Icon(Icons.menu),
+              icon: Icon(
+                Icons.menu,
+                color: Color.fromRGBO(91, 121, 171, 1),
+              ),
               onPressed: () => Scaffold.of(context).openEndDrawer(),
             )
           ],
