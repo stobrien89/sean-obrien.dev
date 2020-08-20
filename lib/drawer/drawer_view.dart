@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_v2/components/mobile_desktop_view_builder.dart';
 import 'package:portfolio_v2/portfolio/portfolio_view.dart';
 import 'package:provider/provider.dart';
@@ -27,26 +28,50 @@ class DrawerMobileView extends StatelessWidget {
         // Important: Remove any padding from the ListView.
         padding: EdgeInsets.zero,
         children: <Widget>[
-          DrawerHeader(
-            child: Text("Sean O'Brien"),
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Colors.red, Colors.black],
-                tileMode: TileMode.repeated,
+          Container(
+            height: 300,
+            child: DrawerHeader(
+              child: Column(
+                children: [
+                  SizedBox(height: 30),
+                  SizedBox(
+                      width: 90,
+                      height: 90,
+                      child: CircleAvatar(
+                        backgroundImage:
+                            NetworkImage('lib/assets/images/linkedin.png'),
+                      )),
+                  SizedBox(height: 25),
+                  Text("Sean O'Brien"),
+                  Text("Software Engineer"),
+                ],
+              ),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Colors.red, Colors.black],
+                  tileMode: TileMode.repeated,
+                ),
               ),
             ),
           ),
           for (var item in navItemsList)
-            ListTile(
-              title: Text(item.text),
-              onTap: () {
-                scrollController.animateTo(
-                  item.position,
-                  duration: Duration(milliseconds: 800),
-                  curve: Curves.easeInOut,
-                );
-                Navigator.pop(context);
-              },
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: ListTile(
+                title: Text(
+                  item.text,
+                  style: GoogleFonts.roboto(
+                      fontSize: 18, fontWeight: FontWeight.w300),
+                ),
+                onTap: () {
+                  scrollController.animateTo(
+                    item.position,
+                    duration: Duration(milliseconds: 800),
+                    curve: Curves.easeInOut,
+                  );
+                  Navigator.pop(context);
+                },
+              ),
             ),
         ],
       ),
