@@ -4,6 +4,9 @@ import 'package:portfolio_v2/components/desktop_view_builder.dart';
 import 'package:portfolio_v2/components/mobile_desktop_view_builder.dart';
 import 'package:portfolio_v2/components/mobile_view_builder.dart';
 import 'package:portfolio_v2/experience/experience_container.dart';
+import 'package:provider/provider.dart';
+import 'package:webfeed/domain/rss_feed.dart';
+import 'package:http/http.dart' as http;
 
 class BlogView extends StatelessWidget {
   const BlogView({
@@ -13,16 +16,20 @@ class BlogView extends StatelessWidget {
   static const title = 'Blog';
   @override
   Widget build(BuildContext context) {
-    return MobileDesktopViewBuilder(
-      mobileView: BlogMobileView(),
-      desktopView: BlogDesktopView(),
-    );
+    return FutureProvider<RssFeed>(
+        create: (_) => getArticles(),
+        child: MobileDesktopViewBuilder(
+          mobileView: BlogMobileView(),
+          desktopView: BlogDesktopView(),
+        ));
   }
 }
 
 class BlogDesktopView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final articles = context.watch<RssFeed>();
+    if (articles == null) return CircularProgressIndicator();
     return DesktopViewBuilder(
       backgroundColor: Color.fromRGBO(46, 184, 155, 1),
       titleText: BlogView.title,
@@ -96,6 +103,8 @@ class BlogCard extends StatelessWidget {
 class BlogMobileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final articles = context.watch<RssFeed>();
+    if (articles == null) return CircularProgressIndicator();
     return MobileViewBuilder(
       backgroundColor: Color.fromRGBO(46, 184, 155, 1),
       titleText: BlogView.title,
@@ -107,4 +116,13 @@ class BlogMobileView extends StatelessWidget {
       ],
     );
   }
+}
+
+getArticles() async {
+  final url =
+      'https://cors-anywhere.herokuapp.com/https://medium.com/feed/@obrien.sean.dev';
+
+  final response = await http.get(url);
+  final parsedResponse = RssFeed.parse(response.body);
+  return parsedResponse;
 }
