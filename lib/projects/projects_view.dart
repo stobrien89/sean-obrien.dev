@@ -10,31 +10,22 @@ class ProjectItem {
   final String title;
   final String description;
   final List<String> technologies;
-  ProjectItem({
-    @required this.image,
-    @required this.title,
-    @required this.description,
-    @required this.technologies,
-  });
+  final String url;
+  ProjectItem(
+      {@required this.image,
+      @required this.title,
+      @required this.description,
+      @required this.technologies,
+      @required this.url});
 }
 
 final kProjectItems = [
   ProjectItem(
-      image: 'lib/assets/images/digthosediglett.png',
-      title: 'Dig Those Diglett',
-      description: 'A pokémon-inspired browser game',
-      technologies: ['HTML5', 'jQuery', 'CSS']),
-  ProjectItem(
-      image: 'lib/assets/images/lostones.png',
-      title: 'LostOnes',
-      description: 'A full-stack Pet Adoption Platform',
-      technologies: [
-        'React',
-        'Express',
-        'MongoDB',
-        'Passport.js',
-        'Foundation'
-      ]),
+      image: 'lib/assets/images/bookify.png',
+      title: 'Bookify',
+      description: 'A full-stack booking site geared toward travel',
+      technologies: ['Rails', 'Webpack', 'Devise', 'OAuth', 'Bootstrap'],
+      url: 'http://bookit-lify.herokuapp.com/'),
   ProjectItem(
       image: 'lib/assets/images/eventwire.png',
       title: 'EventWire',
@@ -45,12 +36,26 @@ final kProjectItems = [
         'MongoDB',
         'Passport-JWT',
         'Bootstrap'
-      ]),
+      ],
+      url: 'https://github.com/stobrien89/EventWire/tree/dev'),
   ProjectItem(
-      image: 'lib/assets/images/bookify.png',
-      title: 'Bookify',
-      description: 'A full-stack booking site geared toward travel',
-      technologies: ['Rails', 'Webpack', 'Devise', 'OAuth', 'Bootstrap'])
+      image: 'lib/assets/images/lostones.png',
+      title: 'LostOnes',
+      description: 'A full-stack Pet Adoption Platform',
+      technologies: [
+        'React',
+        'Express',
+        'MongoDB',
+        'Passport.js',
+        'Foundation'
+      ],
+      url: 'https://lostones.herokuapp.com/lostones'),
+  ProjectItem(
+      image: 'lib/assets/images/digthosediglett.png',
+      title: 'Dig Those Diglett',
+      description: 'A pokémon-inspired browser game',
+      technologies: ['HTML5', 'jQuery', 'CSS'],
+      url: 'https://github.com/stobrien89/Dig_Those_Diglett'),
 ];
 
 class ProjectsView extends StatelessWidget {
@@ -87,8 +92,9 @@ class ProjectsDesktopView extends StatelessWidget {
             return FittedBox(
               child: Card(
                   elevation: 10,
-                  color: Color.fromRGBO(163, 171, 189, 1),
+                  color: Color.fromRGBO(46, 184, 155, .8),
                   margin: EdgeInsets.symmetric(horizontal: 5.0),
+                  borderOnForeground: true,
                   // decoration: BoxDecoration(
                   //   color: Color.fromRGBO(211, 211, 211, 1),
                   //   borderRadius: BorderRadius.all(Radius.circular(5)),
@@ -119,10 +125,10 @@ class ProjectsMobileView extends StatelessWidget {
             ),
             items: kProjectItems.map((i) {
               return FittedBox(
-                // fit: BoxFit.contain,
                 child: Card(
                     elevation: 10,
-                    color: Color.fromRGBO(163, 171, 189, 1),
+                    color: Colors.grey,
+                    shadowColor: Colors.black,
                     margin: EdgeInsets.symmetric(horizontal: 5.0),
                     // decoration: BoxDecoration(
                     //   color: Color.fromRGBO(211, 211, 211, 1),
@@ -138,17 +144,3 @@ class ProjectsMobileView extends StatelessWidget {
         ]);
   }
 }
-
-// children: [
-// for (final item in kProjectItems)
-// Expanded(
-//   child: Padding(
-//     padding: const EdgeInsets.all(8.0),
-//     child: ProjectItemBody(item: item),
-//   ),
-// )
-// ],
-// ),
-
-//mobile view
-// [for (final item in kProjectItems) ProjectItemBody(item: item)],

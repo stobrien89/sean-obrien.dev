@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:portfolio_v2/utils/hover_extensions.dart';
 import 'package:portfolio_v2/experience/experience_container.dart';
@@ -39,6 +40,7 @@ class BlogCard extends StatelessWidget {
               ),
               child: AutoSizeText(
                 article.title,
+                textAlign: TextAlign.center,
                 maxLines: 1,
                 style: Theme.of(context)
                     .textTheme
@@ -50,17 +52,17 @@ class BlogCard extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: [
-                  Text(
-                    convertDate(article.pubDate.toString()),
-                    // article.pubDate.toString(),
-                    style: textStyle(isGray: true),
-                  ),
+                  Text(convertDate(article.pubDate.toString()),
+                      // article.pubDate.toString(),
+                      style: GoogleFonts.montserrat(
+                          fontSize: 20,
+                          color: Color.fromRGBO(43, 125, 128, 1),
+                          fontWeight: FontWeight.w300)),
                   SizedBox(height: 15),
-                  Text(
-                    removeAllHtmlTags(article.content.value),
-                    maxLines: 3,
-                    style: textStyle(),
-                  )
+                  Text(removeAllHtmlTags(article.content.value),
+                      maxLines: 3,
+                      style: GoogleFonts.openSans(
+                          fontSize: 20, fontWeight: FontWeight.w300))
                 ],
               ),
             )

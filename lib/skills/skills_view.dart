@@ -53,18 +53,21 @@ class SkillsDesktopView extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 100),
                 child: Column(
                   children: [
-                    Text('This is some stuff Im good at',
+                    Text(
+                        'I specialize in full-stack web development and am just as comfortable building an API as I am building a front-end.',
                         style: GoogleFonts.openSans(
                             color: Colors.white,
                             fontSize: 24,
-                            fontWeight: FontWeight.w100)),
-                    Text('I love learning new technologies',
+                            fontWeight: FontWeight.w300)),
+                    SizedBox(height: 20),
+                    Text(
+                        'I love to learn new languages, tools and technologies — below are a few things I do well:',
                         style: GoogleFonts.openSans(
                             color: Colors.white,
                             fontSize: 24,
-                            fontWeight: FontWeight.w100)),
+                            fontWeight: FontWeight.w300)),
                     SizedBox(
-                      height: 50,
+                      height: 70,
                     ),
                     for (var rowIndex = 0;
                         rowIndex < skills.length / 4;
@@ -109,28 +112,35 @@ class SkillsMobileView extends StatelessWidget {
       titleText: SkillsView.title,
       children: [
         Image.asset('lib/assets/images/engineer.png'),
-        SizedBox(height: 50),
-        Text('This is some stuff Im good at',
+        SizedBox(height: 60),
+        Text(
+            'I specialize in full-stack web development and am just as comfortable building an API as I am building a front-end.',
             style: GoogleFonts.openSans(
                 color: Colors.white,
                 fontSize: 24,
-                fontWeight: FontWeight.w100)),
-        Text('I love learning new technologies',
+                fontWeight: FontWeight.w300)),
+        SizedBox(height: 20),
+        Text(
+            'I love to learn new languages, tools and technologies — below are a few things I do well:',
             style: GoogleFonts.openSans(
                 color: Colors.white,
                 fontSize: 24,
-                fontWeight: FontWeight.w100)),
+                fontWeight: FontWeight.w300)),
         SizedBox(
           height: 50,
         ),
-        for (var i = 0; i < skills.length; i++) ...[
-          OutlineSkillsContainer(
-            i: i,
-            isMobile: true,
-          ),
-          SizedBox(height: 10)
-        ],
-        SizedBox(height: 50)
+        Column(
+          children: [
+            for (var i = 0; i < skills.length; i++) ...[
+              OutlineSkillsContainer(
+                i: i,
+                isMobile: true,
+              ),
+              SizedBox(height: 10)
+            ],
+          ],
+        ),
+        SizedBox(height: 60)
       ],
     );
   }

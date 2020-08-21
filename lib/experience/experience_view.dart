@@ -73,7 +73,7 @@ class ExperienceMobileView extends StatelessWidget {
                   experience: item,
                   index: experiences.indexOf(item),
                 ),
-              )
+              ),
           ],
         ),
       ],

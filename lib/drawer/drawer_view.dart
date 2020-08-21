@@ -31,7 +31,7 @@ class DrawerMobileView extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: <Widget>[
             Container(
-              height: 300,
+              height: 250,
               child: DrawerHeader(
                 child: Column(
                   children: [
@@ -55,7 +55,8 @@ class DrawerMobileView extends StatelessWidget {
                       "Software Engineer",
                       style: GoogleFonts.roboto(
                           fontSize: 14,
-                          color: Color.fromRGBO(137, 67, 149, .8)),
+                          color: Color.fromRGBO(137, 67, 149, 1),
+                          fontWeight: FontWeight.w300),
                     ),
                   ],
                 ),
@@ -64,7 +65,7 @@ class DrawerMobileView extends StatelessWidget {
                     begin: Alignment.bottomLeft,
                     end: Alignment.topRight,
                     colors: [
-                      Color.fromRGBO(46, 184, 155, .5),
+                      Color.fromRGBO(46, 184, 155, 1),
                       Color.fromRGBO(91, 121, 171, 1),
                       // Color.fromRGBO(137, 67, 149, 1),
                     ],

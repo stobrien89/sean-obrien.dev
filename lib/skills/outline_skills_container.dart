@@ -31,7 +31,7 @@ class OutlineSkillsContainer extends StatelessWidget {
         style: Theme.of(context)
             .textTheme
             .headline4
-            .copyWith(color: Color.fromRGBO(43, 125, 128, 1)),
+            .copyWith(color: Colors.white, fontSize: 22),
         maxLines: 1,
       ),
       alignment: Alignment.center,

@@ -17,7 +17,7 @@ class ExperienceContainer extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     return Container(
         padding: EdgeInsets.all(8),
-        child: width > 1100 ?? false
+        child: width > 1115 ?? false
             ? Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -45,7 +45,7 @@ class ExperienceContainer extends StatelessWidget {
                         SizedBox(height: 10),
                         Text(
                           experience.timeline,
-                          style: GoogleFonts.roboto(
+                          style: GoogleFonts.openSansCondensed(
                               color: Colors.grey,
                               fontSize: 20,
                               fontWeight: FontWeight.w300,
@@ -145,9 +145,9 @@ final experiences = [
       position: 'Software Engineering Immersive Program',
       timeline: 'Feburary 2020 - August 2020',
       description: [
-        '- Comprehensive 20 week program focused on full-stack web development',
-        '- Spent each day writing programs in JavaScript and Ruby',
-        '- Led team of 4 developers in group project'
+        '▪  Comprehensive 20 week program focused on full-stack web development',
+        '▪  Spent each day writing programs in JavaScript and Ruby',
+        '▪  Led team of 4 developers in group project'
       ]),
   ExperienceInfo(
       logo: 'lib/assets/images/rover.png',
@@ -155,10 +155,10 @@ final experiences = [
       position: 'Senior Incident Management Specialist',
       timeline: 'August 2017 - April 2020',
       description: [
-        '- Investigated matters related to safety of users and pets',
-        '- Onboarded and trained new team members',
-        '- Compiled metrics dashboards using Python and SQL',
-        '- Authored and implemented team process improvements'
+        '▪ Investigated matters related to safety of users and pets',
+        '▪  Onboarded and trained new team members',
+        '▪  Compiled metrics dashboards using Python and SQL',
+        '▪  Authored and implemented team process improvements'
       ]),
   ExperienceInfo(
       logo: 'lib/assets/images/alfa.png',
@@ -166,9 +166,9 @@ final experiences = [
       position: 'Liability Adjuster',
       timeline: 'Feburary 2020 - August 2020',
       description: [
-        '- Investigated claims, determined liability',
-        '- Reviewed documentation for fraud and accuracy',
-        '- Negotiated settlements and releases'
+        '▪  Investigated claims, determined liability',
+        '▪  Reviewed documentation for fraud and accuracy',
+        '▪  Negotiated settlements and releases'
       ]),
   ExperienceInfo(
       logo: 'lib/assets/images/apple.png',
@@ -176,8 +176,8 @@ final experiences = [
       position: 'Senior Advisor',
       timeline: 'January 2014 - February 2016',
       description: [
-        '- Provided advanced technical support for iOS and Mac users',
-        '- Partnered with legal and safety departments for emerging hardware issues',
-        '- Trained and onboarded new team members'
+        '▪  Provided advanced technical support for iOS and Mac users',
+        '▪  Partnered with legal and safety departments for emerging hardware issues',
+        '▪  Trained and onboarded new team members'
       ]),
 ];

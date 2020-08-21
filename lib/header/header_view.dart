@@ -68,7 +68,7 @@ class HeaderBody extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         AutoSizeText(
-          "Hi, I'm Sean.",
+          "Hi, my name is Sean.",
           style: Theme.of(context).textTheme.headline2,
           maxLines: 1,
         ),
@@ -83,28 +83,28 @@ class HeaderBody extends StatelessWidget {
           style: GoogleFonts.montserrat(
               fontSize: 22,
               letterSpacing: .5,
-              color: Color.fromRGBO(137, 67, 149, 1),
-              fontWeight: FontWeight.w300),
+              color: Color.fromRGBO(43, 125, 128, 1),
+              fontWeight: FontWeight.w400),
           maxLines: 5,
         ),
         SizedBox(height: isMobile ?? false ? 20 : 50),
         AutoSizeText(
-          "I love to build applications (of any kind) with a focus on user experience.",
+          "I love to build web and mobile applications with a focus on user experience.",
           style: GoogleFonts.montserrat(
               fontSize: 22,
               letterSpacing: .5,
-              color: Color.fromRGBO(137, 67, 149, 1),
-              fontWeight: FontWeight.w300),
+              color: Color.fromRGBO(43, 125, 128, 1.0),
+              fontWeight: FontWeight.w400),
           maxLines: 3,
         ),
-        SizedBox(height: isMobile ?? false ? 40 : 80),
+        SizedBox(height: isMobile ?? false ? 35 : 80),
         FlatButton(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
               Radius.circular(7),
             ),
           ),
-          color: Color.fromRGBO(137, 67, 149, 1),
+          color: Color.fromRGBO(240, 121, 99, 1),
           onPressed: () => launch('mailto:<obrien.sean.dev@gmail.com>'),
           child: Padding(
             padding: EdgeInsets.symmetric(
@@ -134,7 +134,7 @@ class HeaderMobileView extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Container(
-      height: height * .9,
+      height: height < 600 ? height * 1.5 : height * .9,
       width: width,
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
       color: Color.fromRGBO(46, 184, 155, 1),
@@ -145,6 +145,7 @@ class HeaderMobileView extends StatelessWidget {
             'lib/assets/images/portfolio_profile.png',
           )),
           HeaderBody(isMobile: true),
+          SizedBox(height: 40)
         ],
       ),
     );

@@ -19,9 +19,7 @@ class MyApp extends StatelessWidget {
           headline2: GoogleFonts.oswald(
               color: Colors.white, fontWeight: FontWeight.w300),
           headline4: GoogleFonts.oswald(
-            fontSize: 30,
-            color: Colors.black,
-          ),
+              fontSize: 30, color: Colors.black, fontWeight: FontWeight.w300),
         ),
       ),
       home: PortfolioView(),
