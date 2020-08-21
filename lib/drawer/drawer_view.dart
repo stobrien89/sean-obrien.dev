@@ -40,8 +40,7 @@ class DrawerMobileView extends StatelessWidget {
                         width: 90,
                         height: 90,
                         child: CircleAvatar(
-                          backgroundImage:
-                              NetworkImage('lib/assets/images/linkedin.png'),
+                          backgroundImage: NetworkImage('images/LinkedIn.png'),
                         )),
                     SizedBox(height: 25),
                     Text(

@@ -140,7 +140,7 @@ class ExperienceInfo {
 
 final experiences = [
   ExperienceInfo(
-      logo: 'lib/assets/images/ga.png',
+      logo: 'images/ga.png',
       company: 'General Assembly',
       position: 'Software Engineering Immersive Program',
       timeline: 'Feburary 2020 - August 2020',
@@ -150,7 +150,7 @@ final experiences = [
         '▪  Led team of 4 developers in group project'
       ]),
   ExperienceInfo(
-      logo: 'lib/assets/images/rover.png',
+      logo: 'images/rover.png',
       company: 'Rover.com',
       position: 'Senior Incident Management Specialist',
       timeline: 'August 2017 - April 2020',
@@ -161,7 +161,7 @@ final experiences = [
         '▪  Authored and implemented team process improvements'
       ]),
   ExperienceInfo(
-      logo: 'lib/assets/images/alfa.png',
+      logo: 'images/alfa.png',
       company: 'Alfa Insurance Company',
       position: 'Liability Adjuster',
       timeline: 'Feburary 2020 - August 2020',
@@ -171,7 +171,7 @@ final experiences = [
         '▪  Negotiated settlements and releases'
       ]),
   ExperienceInfo(
-      logo: 'lib/assets/images/apple.png',
+      logo: 'images/apple.png',
       company: 'Apple Inc.',
       position: 'Senior Advisor',
       timeline: 'January 2014 - February 2016',

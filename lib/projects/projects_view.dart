@@ -21,13 +21,13 @@ class ProjectItem {
 
 final kProjectItems = [
   ProjectItem(
-      image: 'lib/assets/images/bookify.png',
+      image: 'images/bookify.png',
       title: 'Bookify',
       description: 'A full-stack booking site geared toward travel',
       technologies: ['Rails', 'Webpack', 'Devise', 'OAuth', 'Bootstrap'],
       url: 'http://bookit-lify.herokuapp.com/'),
   ProjectItem(
-      image: 'lib/assets/images/eventwire.png',
+      image: 'images/eventwire.png',
       title: 'EventWire',
       description: 'A full-stack event and party planning Platform',
       technologies: [
@@ -39,7 +39,7 @@ final kProjectItems = [
       ],
       url: 'https://github.com/stobrien89/EventWire/tree/dev'),
   ProjectItem(
-      image: 'lib/assets/images/lostones.png',
+      image: 'images/lostones.png',
       title: 'LostOnes',
       description: 'A full-stack Pet Adoption Platform',
       technologies: [
@@ -51,7 +51,7 @@ final kProjectItems = [
       ],
       url: 'https://lostones.herokuapp.com/lostones'),
   ProjectItem(
-      image: 'lib/assets/images/digthosediglett.png',
+      image: 'images/digthosediglett.png',
       title: 'Dig Those Diglett',
       description: 'A pokémon-inspired browser game',
       technologies: ['HTML5', 'jQuery', 'CSS'],

@@ -43,7 +43,7 @@ class SkillsDesktopView extends StatelessWidget {
             Column(
               children: [
                 Image.asset(
-                  'lib/assets/images/engineer.png',
+                  'images/engineer.png',
                   height: isSmall ? imageWidth : 500,
                 )
               ],
@@ -111,7 +111,7 @@ class SkillsMobileView extends StatelessWidget {
       backgroundColor: Color.fromRGBO(46, 184, 155, 1),
       titleText: SkillsView.title,
       children: [
-        Image.asset('lib/assets/images/engineer.png'),
+        Image.asset('images/engineer.png'),
         SizedBox(height: 60),
         Text(
             'I specialize in full-stack web development and am just as comfortable building an API as I am building a front-end.',

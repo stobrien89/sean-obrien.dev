@@ -30,7 +30,7 @@ class NavDesktopView extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Row(
         children: [
-          Image.asset('lib/assets/images/logo.png',
+          Image.asset('images/logo.png',
               height: 100, width: 100, fit: BoxFit.fitHeight),
           Spacer(),
           for (var item in navItemsList)
@@ -62,7 +62,7 @@ class NavMobileView extends StatelessWidget {
         width: double.infinity,
         child: Row(
           children: [
-            Image.asset('lib/assets/images/logo.png'),
+            Image.asset('images/logo.png'),
             Spacer(),
             IconButton(
               icon: Icon(
