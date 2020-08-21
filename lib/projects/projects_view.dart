@@ -83,11 +83,11 @@ class ProjectsDesktopView extends StatelessWidget {
         SizedBox(height: 70),
         CarouselSlider(
           options: CarouselOptions(
-            enlargeCenterPage: true,
-            aspectRatio: 16 / 9,
-            enableInfiniteScroll: true,
-            viewportFraction: 0.75,
-          ),
+              enlargeCenterPage: true,
+              aspectRatio: 16 / 9,
+              enableInfiniteScroll: true,
+              viewportFraction: 0.75,
+              scrollDirection: Axis.horizontal),
           items: kProjectItems.map((i) {
             return FittedBox(
               child: Card(
@@ -119,12 +119,13 @@ class ProjectsMobileView extends StatelessWidget {
           CarouselSlider(
             options: CarouselOptions(
               enlargeCenterPage: true,
-              aspectRatio: 1.0,
+              aspectRatio: .95,
               enableInfiniteScroll: true,
               viewportFraction: 0.85,
             ),
             items: kProjectItems.map((i) {
               return FittedBox(
+                fit: BoxFit.fill,
                 child: Card(
                     elevation: 10,
                     color: Colors.grey,

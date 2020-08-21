@@ -69,43 +69,35 @@ class HeaderBody extends StatelessWidget {
       children: [
         AutoSizeText(
           "Hi, my name is Sean.",
-          style: GoogleFonts.oswald(
-            fontSize: isMobile ? 26 : 30,
-            color: Colors.white,
-            fontWeight: FontWeight.w300,
-          ),
+          style: Theme.of(context).textTheme.headline2.copyWith(fontSize: 45),
           maxLines: 1,
         ),
         AutoSizeText(
           "I'm a Software Engineer </>",
-          style: GoogleFonts.oswald(
-            fontSize: isMobile ? 26 : 30,
-            color: Colors.white,
-            fontWeight: FontWeight.w300,
-          ),
+          style: Theme.of(context).textTheme.headline2.copyWith(fontSize: 45),
           maxLines: 1,
         ),
-        SizedBox(height: isMobile ?? false ? 20 : 50),
+        SizedBox(height: 20),
         AutoSizeText(
           "I have 2 years of experience in software development and over 6 years of experience working in tech. ",
           style: GoogleFonts.montserrat(
-              fontSize: isMobile ? 18 : 22,
+              fontSize: 20,
               letterSpacing: .5,
               color: Color.fromRGBO(43, 125, 128, 1),
               fontWeight: FontWeight.w400),
           maxLines: 5,
         ),
-        SizedBox(height: isMobile ?? false ? 20 : 50),
+        SizedBox(height: 20),
         AutoSizeText(
           "I love to build web and mobile applications with a focus on user experience.",
           style: GoogleFonts.montserrat(
-              fontSize: isMobile ? 18 : 22,
+              fontSize: 20,
               letterSpacing: .5,
               color: Color.fromRGBO(43, 125, 128, 1.0),
               fontWeight: FontWeight.w400),
           maxLines: 3,
         ),
-        SizedBox(height: isMobile ?? false ? 35 : 80),
+        SizedBox(height: 35),
         FlatButton(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
@@ -121,7 +113,7 @@ class HeaderBody extends StatelessWidget {
             child: Text(
               'Get In Touch',
               style: GoogleFonts.oswald(
-                  fontSize: isMobile ?? false ? 20 : 24,
+                  fontSize: 20,
                   color: Colors.white,
                   fontWeight: FontWeight.w300),
             ),
@@ -142,18 +134,16 @@ class HeaderMobileView extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Container(
-      height: height < 600 ? height * 1.3 : height * .9,
+      height: height < 800 && width < 400
+          ? height * 1.4
+          : height < 750 && width > 400 ? height * 1.1 : height * 1,
       width: width,
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
       color: Color.fromRGBO(46, 184, 155, 1),
       child: Column(
         children: [
-          Expanded(
-              child: Image.asset(
-            'images/portfolio_profile.png',
-          )),
-          HeaderBody(isMobile: true),
-          SizedBox(height: 40)
+          Image.asset('images/portfolio_profile.png', height: 250),
+          Expanded(child: HeaderBody(isMobile: true)),
         ],
       ),
     );
