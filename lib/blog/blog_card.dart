@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:portfolio_v2/utils/hover_extensions.dart';
-import 'package:portfolio_v2/experience/experience_container.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webfeed/domain/rss_item.dart';
 import 'package:http/http.dart' as http;

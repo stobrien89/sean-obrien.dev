@@ -98,14 +98,14 @@ class HeaderBody extends StatelessWidget {
           maxLines: 3,
         ),
         SizedBox(height: 35),
-        FlatButton(
+        RaisedButton(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
               Radius.circular(7),
             ),
           ),
           color: Color.fromRGBO(240, 121, 99, 1),
-          onPressed: () => launch('mailto:<obrien.sean.dev@gmail.com>'),
+          onPressed: () => launch('mailto:obrien.sean.dev@gmail.com'),
           child: Padding(
             padding: EdgeInsets.symmetric(
                 vertical: isMobile ?? false ? 10 : 17,

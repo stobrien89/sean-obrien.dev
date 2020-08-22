@@ -55,7 +55,7 @@ final kProjectItems = [
       title: 'Dig Those Diglett',
       description: 'A pokémon-inspired browser game.',
       technologies: ['HTML5', 'jQuery', 'CSS'],
-      url: 'https://github.com/stobrien89/Dig_Those_Diglett'),
+      url: 'https://stobrien89.github.io/'),
 ];
 
 class ProjectsView extends StatelessWidget {
