@@ -68,12 +68,15 @@ class BlogMobileView extends StatelessWidget {
       titleText: BlogView.title,
       children: [
         for (final article in articles)
-          BlogCard(
-            article: article,
-            isMobile: true,
+          Padding(
+            padding: const EdgeInsets.only(bottom: 20),
+            child: BlogCard(
+              article: article,
+              isMobile: true,
+            ),
           ),
         SizedBox(
-          height: 70,
+          height: 50,
         )
       ],
     );

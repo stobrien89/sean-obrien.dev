@@ -94,7 +94,7 @@ class FooterMobileView extends StatelessWidget {
                 color: Color.fromRGBO(137, 67, 149, 1),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             InkWell(
               child: Text(
                 'Source Code',
@@ -103,8 +103,8 @@ class FooterMobileView extends StatelessWidget {
                     decoration: TextDecoration.underline),
               ),
               mouseCursor: MaterialStateMouseCursor.clickable,
-              splashColor: Colors.transparent,
-              highlightColor: Colors.transparent,
+              splashColor: Color.fromRGBO(46, 184, 155, .5),
+              highlightColor: Color.fromRGBO(46, 184, 155, 1),
               hoverColor: Colors.transparent,
               onTap: () =>
                   launch('https://github.com/stobrien89/sean-obrien.dev'),

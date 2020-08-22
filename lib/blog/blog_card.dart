@@ -55,14 +55,14 @@ class BlogCard extends StatelessWidget {
                   Text(convertDate(article.pubDate.toString()),
                       // article.pubDate.toString(),
                       style: GoogleFonts.montserrat(
-                          fontSize: 20,
+                          fontSize: 16,
                           color: Color.fromRGBO(43, 125, 128, 1),
                           fontWeight: FontWeight.w300)),
                   SizedBox(height: 15),
                   Text(removeAllHtmlTags(article.content.value),
                       maxLines: 3,
                       style: GoogleFonts.openSans(
-                          fontSize: 20, fontWeight: FontWeight.w300))
+                          fontSize: 18, fontWeight: FontWeight.w300))
                 ],
               ),
             )

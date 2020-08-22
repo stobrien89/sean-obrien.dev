@@ -36,13 +36,13 @@ class DrawerMobileView extends StatelessWidget {
                 child: Column(
                   children: [
                     SizedBox(height: 30),
-                    SizedBox(
-                        width: 90,
-                        height: 90,
-                        child: CircleAvatar(
-                          backgroundImage: AssetImage('images/linkedin.png'),
-                        )),
-                    SizedBox(height: 25),
+                    CircleAvatar(
+                      backgroundImage: AssetImage(
+                        'images/drawer_picture.png',
+                      ),
+                      radius: 40,
+                    ),
+                    SizedBox(height: 15),
                     Text(
                       "Sean O'Brien",
                       style: GoogleFonts.roboto(

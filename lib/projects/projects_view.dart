@@ -23,13 +23,13 @@ final kProjectItems = [
   ProjectItem(
       image: 'images/bookify.png',
       title: 'Bookify',
-      description: 'A full-stack booking site geared toward travel',
+      description: 'A full-stack booking platform geared toward travel.',
       technologies: ['Rails', 'Webpack', 'Devise', 'OAuth', 'Bootstrap'],
       url: 'http://bookit-lify.herokuapp.com/'),
   ProjectItem(
       image: 'images/eventwire.png',
       title: 'EventWire',
-      description: 'A full-stack event and party planning Platform',
+      description: 'A full-stack event and party planning platform.',
       technologies: [
         'React',
         'Express',
@@ -41,7 +41,7 @@ final kProjectItems = [
   ProjectItem(
       image: 'images/lostones.png',
       title: 'LostOnes',
-      description: 'A full-stack Pet Adoption Platform',
+      description: 'A full-stack pet adoption platform.',
       technologies: [
         'React',
         'Express',
@@ -53,7 +53,7 @@ final kProjectItems = [
   ProjectItem(
       image: 'images/digthosediglett.png',
       title: 'Dig Those Diglett',
-      description: 'A pokémon-inspired browser game',
+      description: 'A pokémon-inspired browser game.',
       technologies: ['HTML5', 'jQuery', 'CSS'],
       url: 'https://github.com/stobrien89/Dig_Those_Diglett'),
 ];
@@ -128,7 +128,7 @@ class ProjectsMobileView extends StatelessWidget {
                 fit: BoxFit.fill,
                 child: Card(
                     elevation: 10,
-                    color: Colors.grey,
+                    color: Color.fromRGBO(46, 184, 155, .8),
                     shadowColor: Colors.black,
                     margin: EdgeInsets.symmetric(horizontal: 5.0),
                     // decoration: BoxDecoration(
@@ -140,7 +140,7 @@ class ProjectsMobileView extends StatelessWidget {
             }).toList(),
           ),
           SizedBox(
-            height: 70,
+            height: 60,
           )
         ]);
   }

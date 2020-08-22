@@ -76,7 +76,7 @@ class ProjectItemBody extends StatelessWidget {
               style: GoogleFonts.oswald(
                   color: Colors.white,
                   fontWeight: FontWeight.w300,
-                  fontSize: 17),
+                  fontSize: 20),
             ),
           ).moveUpOnHover,
           SizedBox(height: 30),
