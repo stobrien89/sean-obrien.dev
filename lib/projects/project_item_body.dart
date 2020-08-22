@@ -15,6 +15,7 @@ class ProjectItemBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
+    final isSmall = width < 450;
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -37,13 +38,16 @@ class ProjectItemBody extends StatelessWidget {
           SizedBox(height: 15),
           Text(
             item.title,
-            style: Theme.of(context).textTheme.headline4,
+            style: Theme.of(context)
+                .textTheme
+                .headline4
+                .copyWith(fontSize: isSmall ? 34 : 26),
           ),
           SizedBox(height: 15),
           Text(
             item.description,
             style: GoogleFonts.openSans(
-              fontSize: 17,
+              fontSize: isSmall ? 22 : 18,
             ),
           ),
           SizedBox(height: 10),
@@ -52,19 +56,22 @@ class ProjectItemBody extends StatelessWidget {
             children: [
               Text('Technologies Used: ',
                   style: GoogleFonts.openSans(
-                    fontSize: 17,
+                    fontSize: isSmall ? 21 : 17,
                   )),
               for (final tech in item.technologies)
                 Padding(
                   padding: const EdgeInsets.only(right: 8.0),
                   child: Chip(
-                    label: Text(tech),
+                    label: Text(
+                      tech,
+                      style: GoogleFonts.roboto(fontSize: isSmall ? 21 : 17),
+                    ),
                   ),
                 )
             ],
           ),
           SizedBox(height: 10),
-          FlatButton(
+          RaisedButton(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(
                 Radius.circular(7),
@@ -77,7 +84,7 @@ class ProjectItemBody extends StatelessWidget {
               style: GoogleFonts.oswald(
                   color: Colors.white,
                   fontWeight: FontWeight.w300,
-                  fontSize: 20),
+                  fontSize: isSmall ? 26 : 20),
             ),
           ).moveUpOnHover,
           SizedBox(height: 30),

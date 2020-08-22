@@ -95,10 +95,6 @@ class ProjectsDesktopView extends StatelessWidget {
                   color: Color.fromRGBO(46, 184, 155, .8),
                   margin: EdgeInsets.symmetric(horizontal: 5.0),
                   borderOnForeground: true,
-                  // decoration: BoxDecoration(
-                  //   color: Color.fromRGBO(211, 211, 211, 1),
-                  //   borderRadius: BorderRadius.all(Radius.circular(5)),
-
                   child: ProjectItemBody(item: i)),
             );
           }).toList(),
@@ -131,10 +127,6 @@ class ProjectsMobileView extends StatelessWidget {
                     color: Color.fromRGBO(46, 184, 155, .8),
                     shadowColor: Colors.black,
                     margin: EdgeInsets.symmetric(horizontal: 5.0),
-                    // decoration: BoxDecoration(
-                    //   color: Color.fromRGBO(211, 211, 211, 1),
-                    //   borderRadius: BorderRadius.all(Radius.circular(5)),
-
                     child: ProjectItemBody(item: i)),
               );
             }).toList(),
