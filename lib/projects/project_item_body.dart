@@ -41,13 +41,13 @@ class ProjectItemBody extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .headline4
-                .copyWith(fontSize: isSmall ? 34 : 26),
+                .copyWith(fontSize: isSmall ? 38 : 26),
           ),
           SizedBox(height: 15),
           Text(
             item.description,
             style: GoogleFonts.openSans(
-              fontSize: isSmall ? 22 : 18,
+              fontSize: isSmall ? 26 : 18,
             ),
           ),
           SizedBox(height: 10),
@@ -56,7 +56,7 @@ class ProjectItemBody extends StatelessWidget {
             children: [
               Text('Technologies Used: ',
                   style: GoogleFonts.openSans(
-                    fontSize: isSmall ? 21 : 17,
+                    fontSize: isSmall ? 25 : 17,
                   )),
               for (final tech in item.technologies)
                 Padding(
@@ -64,7 +64,7 @@ class ProjectItemBody extends StatelessWidget {
                   child: Chip(
                     label: Text(
                       tech,
-                      style: GoogleFonts.roboto(fontSize: isSmall ? 21 : 17),
+                      style: GoogleFonts.roboto(fontSize: isSmall ? 25 : 17),
                     ),
                   ),
                 )
@@ -84,7 +84,7 @@ class ProjectItemBody extends StatelessWidget {
               style: GoogleFonts.oswald(
                   color: Colors.white,
                   fontWeight: FontWeight.w300,
-                  fontSize: isSmall ? 26 : 20),
+                  fontSize: isSmall ? 30 : 20),
             ),
           ).moveUpOnHover,
           SizedBox(height: 30),
