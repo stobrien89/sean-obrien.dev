@@ -25,7 +25,7 @@ final kProjectItems = [
       title: 'Bookify',
       description: 'A full-stack booking platform geared toward travel.',
       technologies: ['Rails', 'Webpack', 'Devise', 'OAuth', 'Bootstrap'],
-      url: 'http://bookit-lify.herokuapp.com/'),
+      url: 'https://bookit-lify.herokuapp.com/'),
   ProjectItem(
       image: 'images/eventwire.png',
       title: 'EventWire',
