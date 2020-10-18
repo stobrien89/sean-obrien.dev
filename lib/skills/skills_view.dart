@@ -54,7 +54,7 @@ class SkillsDesktopView extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                        'I specialize in full-stack web development and am just as comfortable building an API as I am building a front-end.',
+                        'I specialize in full-stack web development and am just as comfortable building an API as I am building front-end components.',
                         style: GoogleFonts.openSans(
                             color: Colors.white,
                             fontSize: 24,
@@ -154,9 +154,9 @@ final skills = [
   'NodeJS',
   'React',
   'Rails',
+  'Django',
   'Flutter',
-  'Agile',
-  'Scrum',
+  'Unit Tests',
   'SQL',
   'NoSQL',
 ];
