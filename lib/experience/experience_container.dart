@@ -46,7 +46,7 @@ class ExperienceContainer extends StatelessWidget {
                         Text(
                           experience.timeline,
                           style: GoogleFonts.openSansCondensed(
-                              color: Colors.grey,
+                              color: Colors.white,
                               fontSize: 20,
                               fontWeight: FontWeight.w300,
                               fontStyle: FontStyle.italic),
